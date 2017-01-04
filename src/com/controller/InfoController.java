@@ -23,7 +23,7 @@ public class InfoController {
     public Map<String, Object> querycarInfo(HttpServletRequest request){
         Map<String, Object> map = new HashMap<>();
         String id=CookieUtils.getCookieValueByName(request, "userId");
-        if(null == id) {
+        if(null == id ) {
             map.put("reason", "用户不存在");
         } else {
             map = infoService.getCarInfo(Integer.parseInt(id));
