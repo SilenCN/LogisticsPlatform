@@ -1,7 +1,6 @@
 package com.controller;
 
-import com.model.User;
-import com.service.UserService;
+import com.service.TestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,19 +9,19 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/test")
 public class Test {
     @Resource
-    private UserService userService;
+    private TestService testService;
 
     @ResponseBody
     @RequestMapping("/create")
-    public String create(User user) {
-        return userService.addUser(user)+"";
+    public String create(com.model.Test test) {
+        return testService.addUser(test)+"";
     }
     @ResponseBody
     @RequestMapping("/getAll")
-    public List<User> getAll(){
-        return userService.getAll();
+    public List<com.model.Test> getAll(){
+        return testService.getAll();
     }
 }

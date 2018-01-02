@@ -1,11 +1,10 @@
 package com.model;
 
-public class User {
+public class Test {
     private int id;
     private String name;
     private String password;
-    private long createTime;
-    private int type;
+
 
     public int getId() {
         return id;
@@ -31,19 +30,4 @@ public class User {
         this.password = password;
     }
 
-    public long getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(long createTime) {
-        this.createTime = createTime;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
 }

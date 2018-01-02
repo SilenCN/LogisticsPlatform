@@ -1,0 +1,3 @@
+create database LogisticsPlatform;
+
+create table test(id INTEGER primary key AUTO_INCREMENT,name TEXT NOT NULL,password TEXT NOT NULL);
