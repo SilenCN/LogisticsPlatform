@@ -5,7 +5,6 @@ public class Test {
     private String name;
     private String password;
 
-
     public int getId() {
         return id;
     }
