@@ -44,6 +44,29 @@ public class InfoController {
            return infoService.insertOwnerInfo(ownerInfo)+"";
        }
     }
-  /*  @RequestMapping("/up")*/
+    @RequestMapping("/updateInOwner")
+    @ResponseBody
+    public String updateInOwner(OwnerInfo ownerInfo,HttpServletRequest request){
+        String id=CookieUtils.getCookieValueByName(request,"userId");
+        if(null==id){
+            return "false";
+        }
+        else{
+            ownerInfo.setId(Integer.parseInt(id.trim()));
+            return infoService.updateOwnerInfo(ownerInfo)+"";
+        }
+    }
+    @RequestMapping("/updateInCar")
+    @ResponseBody
+    public String updateInCar(CarInfo carInfo,HttpServletRequest request){
+        String id= CookieUtils.getCookieValueByName(request,"userId");
+        if (null==id){
+            return "false";
+        }
+        else {
+            carInfo.setId(Integer.parseInt(id.trim()));
+            return infoService.updateCarInfo(carInfo)+"";
+        }
+    }
 
 }
