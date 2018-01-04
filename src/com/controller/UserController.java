@@ -28,46 +28,52 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/create")
-    public Map<String,String> create(com.model.User user, String checkCode, HttpServletRequest request, HttpServletResponse response) {
-        Map<String,String> map=new HashMap<>();
-        if (!checkCodeService.check(request,checkCode))
-            map.put("reason","验证码错误");
-        int id=userService.addUser(user);
-        if (id==-1){
-            map.put("reason","用户名已存在");
-        }else{
-            response.addCookie(new Cookie("userId",id+""));
-            map.put("result","true");
-            return map;
+    public Map<String, String> create(com.model.User user, String checkCode, HttpServletRequest request, HttpServletResponse response) {
+        Map<String, String> map = new HashMap<>();
+        if (!checkCodeService.check(request, checkCode)) {
+            map.put("reason", "验证码错误");
+        } else {
+            int id = userService.addUser(user);
+            if (id == -1) {
+                map.put("reason", "用户名已存在");
+            } else {
+                response.addCookie(new Cookie("userId", id + ""));
+                map.put("result", "true");
+                return map;
+            }
         }
-        map.put("result","false");
+        map.put("result", "false");
         return map;
     }
+
     @ResponseBody
     @RequestMapping("/login")
-    public Map<String, String> login(User user,String checkCode,HttpServletRequest request,HttpServletResponse response){
-        Map<String,String> map=new HashMap<>();
-        if (!checkCodeService.check(request,checkCode))
-            map.put("reason","验证码错误");
-        User temp=userService.checkUser(user);
-        if (null==temp){
-            map.put("reason","用户名或密码错误");
-        }else{
-            response.addCookie(new Cookie("userId",temp.getId()+""));
-            response.addCookie(new Cookie("userType",temp.getType()+""));
-            map.put("result","true");
-            map.put("info",temp.isInfo()+"");
-            map.put("type",temp.getType()+"");
-            return map;
+    public Map<String, String> login(User user, String checkCode, HttpServletRequest request, HttpServletResponse response) {
+        Map<String, String> map = new HashMap<>();
+        if (!checkCodeService.check(request, checkCode)) {
+            map.put("reason", "验证码错误");
+        } else {
+            User temp = userService.checkUser(user);
+            if (null == temp) {
+                map.put("reason", "用户名或密码错误");
+            } else {
+                response.addCookie(new Cookie("userId", temp.getId() + ""));
+                response.addCookie(new Cookie("userType", temp.getType() + ""));
+                map.put("result", "true");
+                map.put("info", temp.isInfo() + "");
+                map.put("type", temp.getType() + "");
+                return map;
+            }
         }
-        map.put("result","false");
+        map.put("result", "false");
         return map;
     }
+
     @ResponseBody
     @RequestMapping("/checkImprovedInfo")
-    public boolean checkImprovedInfo(HttpServletRequest request,HttpServletResponse response){
-        String id= CookieUtils.getCookieValueByName(request,"id");
-        if (null!=id){
+    public boolean checkImprovedInfo(HttpServletRequest request, HttpServletResponse response) {
+        String id = CookieUtils.getCookieValueByName(request, "id");
+        if (null != id) {
             return userService.checkInfo(Integer.parseInt(id.trim()));
         }
         return false;
