@@ -17,6 +17,7 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public boolean insertOrder(Order order){
+        order.setCreateTime(System.currentTimeMillis());
         return orderDao.insertOrder(order) > 0;
     }
 
