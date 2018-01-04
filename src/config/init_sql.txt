@@ -1,7 +1,13 @@
 create database LogisticsPlatform;
 
 
-create table user(id INTEGER primary key AUTO_INCREMENT,name TEXT NOT NULL,password TEXT NOT NULL,type INTEGER NOT NULL,info BOOLEAN,createTime BIGINT);
+create table user(
+    id INTEGER primary key AUTO_INCREMENT,
+    name TEXT NOT NULL,
+    password TEXT NOT NULL,
+    type INTEGER NOT NULL,
+    info BOOLEAN,
+    createTime BIGINT);
 
 create table carInfo(
     id INTEGER primary key,
