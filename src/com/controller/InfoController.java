@@ -69,4 +69,9 @@ public class InfoController {
         }
     }
 
+    @RequestMapping("/queryCarInfo")
+    @ResponseBody
+    public Map<String,Object> queryCarInfo(int carId){
+       return infoService.getCarInfo(carId);
+    }
 }
