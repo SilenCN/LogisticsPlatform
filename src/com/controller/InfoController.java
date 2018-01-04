@@ -70,13 +70,5 @@ public class InfoController {
             return infoService.updateCarInfo(carInfo)+"";
         }
     }
-    /*@RequestMapping("/getInCar")
-    @ResponseBody
-    public Map<String,Object> getInCar(HttpServletRequest request){
-        String id=CookieUtils.getCookieValueByName(request,"userId");
-        if(null==id){
-
-        }
-    }*/
 
 }
