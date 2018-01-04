@@ -63,6 +63,7 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+    <mvc:default-servlet-handler/>
     <!-- 配置文件上传，如果没有使用文件上传可以不用配置，当然如果不配，那么配置文件中也不必引入上传组件包 -->
 <!--
     <bean id="multipartResolver"
