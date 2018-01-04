@@ -14,7 +14,7 @@ public class CheckCodeServiceImpl implements CheckCodeService {
         if (null!=checkCode&&!checkCode.isEmpty()){
             String tCode= null;
             try {
-                tCode = new String(Base64.getDecoder().decode(request.getSession().getAttribute("code").toString().getBytes("utf-8")),"utf-8");
+                tCode = new String(Base64.getDecoder().decode(request.getSession().getAttribute("CheckCode").toString().getBytes("utf-8")),"utf-8");
             } catch (UnsupportedEncodingException e) {
                 return false;
             }
