@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -17,21 +18,19 @@ import java.util.Map;
 public class ApplyController {
     @Resource
     private ApplyService applyService;
-    @RequestMapping("/selectApplyCarInfoList")
+    @RequestMapping("/getApplyCarInfoList")
     @ResponseBody
-    public Map<String, Object> selectApplyCarInfoList(int orderId){
-        return applyService.getApply(orderId);
+    public List<Map<String, Object>> selectApplyCarInfoList(int orderId){
+        return applyService.getApplyCarInfoList(orderId);
+    }
+    @RequestMapping("/updateApplyStatusById")
+    @ResponseBody
+    public String updateApplyStatusById(int id){
+        return applyService.updateApplyStatus(id)+"";
     }
     @RequestMapping("/updateApplyStatus")
     @ResponseBody
-    public String updateApplyStatus(Apply apply, HttpServletRequest request){
-        String id= CookieUtils.getCookieValueByName(request,"orderId");
-        if(null==id){
-            return "false";
-        }
-        else{
-            apply.setId(Integer.parseInt(id.trim()));
-            return applyService.updateApplyStatus(apply)+"";
-        }
+    public String updateApplyStatus(int orderId,int carId){
+        return applyService.updateApplyStatus(orderId,carId)+"";
     }
 }
