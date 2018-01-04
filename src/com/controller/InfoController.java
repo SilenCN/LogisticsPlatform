@@ -16,7 +16,7 @@ public class InfoController {
     @Resource
     private InfoService infoService;
 
-    public String fillInCarInfo(CarInfo carInfo, HttpServletRequest request){
+/*    public String fillInCarInfo(CarInfo carInfo, HttpServletRequest request){
 
         String id= CookieUtils.getCookieValueByName(request,"userId");
         if (null==id){
@@ -25,6 +25,6 @@ public class InfoController {
            // carInfo.setId();
         }
 
-    }
+    }*/
 
 }

@@ -2,7 +2,6 @@ package com.controller;
 
 import com.model.User;
 import com.service.CheckCodeService;
-import com.service.TestService;
 import com.service.UserService;
 import com.utils.CookieUtils;
 import org.springframework.stereotype.Controller;
@@ -14,7 +13,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
