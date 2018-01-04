@@ -80,4 +80,5 @@ public class InfoController {
     public Map<String,Object> queryCarInfo(int carId){
        return infoService.getCarInfo(carId);
     }
+
 }
