@@ -5,6 +5,7 @@ import com.model.OwnerInfo;
 
 import java.util.Map;
 
+
 public interface InfoDao {
     int insertCarInfo(CarInfo carInfo);
 
