@@ -23,13 +23,11 @@ public class InfoController {
    public String fillInCarInfo(CarInfo carInfo, HttpServletRequest request){
 
         String id= CookieUtils.getCookieValueByName(request,"userId");
-        //String phone=CookieUtils.getCookieValueByName(request,"phone");
         if (null==id){
             return "false";
         }
         else {
            carInfo.setId(Integer.parseInt(id.trim()));
-           //carInfo.setPhone(phone);
            return infoService.insertCarInfo(carInfo)+"";
         }
 
@@ -46,29 +44,6 @@ public class InfoController {
            return infoService.insertOwnerInfo(ownerInfo)+"";
        }
     }
-    @RequestMapping("/updateInOwner")
-    @ResponseBody
-    public String updateInOwner(OwnerInfo ownerInfo,HttpServletRequest request){
-        String id=CookieUtils.getCookieValueByName(request,"userId");
-        if(null==id){
-            return "false";
-        }
-        else{
-            ownerInfo.setId(Integer.parseInt(id.trim()));
-            return infoService.updateOwnerInfo(ownerInfo)+"";
-        }
-    }
-    @RequestMapping("/updateInCar")
-    @ResponseBody
-    public String updateInCar(CarInfo carInfo,HttpServletRequest request){
-        String id= CookieUtils.getCookieValueByName(request,"userId");
-        if (null==id){
-            return "false";
-        }
-        else {
-            carInfo.setId(Integer.parseInt(id.trim()));
-            return infoService.updateCarInfo(carInfo)+"";
-        }
-    }
+  /*  @RequestMapping("/up")*/
 
 }
