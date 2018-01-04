@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.OrderDao">
+
+    <insert id="insertOrder" keyProperty="id" parameterType="com.model.Order">
+        INSERT INTO order(id,ownerId,status,createTime) VALUES(#{id},#{ownerId},#{status},#{createTime})
+    </insert>
+
+    <update id="updateOrder" keyProperty="id" parameterType="com.model.Order">
+        UPDATE order SET satatus={#status} WHERE id={#id}
+    </update>
+   <!-- <select id="getOrder" resultType="java.util.HashMap">
+        SELECT order.id,order.ownerId,ownerInfo.phone,ownerInfo.address,ownerInfo.goods FROM user,ownerInfo WHERE user.id=ownerInfo.id AND user.id=#{id}
+    </select>-->
+
+</mapper>
+
