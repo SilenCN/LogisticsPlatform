@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ApplyDao">
+    <insert id="apply" useGeneratedKeys="true" keyProperty="id" parameterType="com.model.Apply">
+        INSERT INTO apply (orderId,carId,status,createTime) VALUES (#{orderId},#{carId},#{status},#{createTime})
+    </insert>
+
+    <select id="queryApply" resultType="com.model.Apply">
+        SELECT * FROM apply WHERE orderId=#{orderId} AND carId=#{carId}
+    </select>
+
+    <select id="selectApplyCarInfoList" resultType="java.util.HashMap">
+        SELECT apply.id,apply.carId,user.name,apply.createTime, FROM user,apply WHERE  apply.carId=user.id AND orderId=#{orderId}
+    </select>
+</mapper>
