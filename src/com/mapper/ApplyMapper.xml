@@ -30,4 +30,9 @@
     <update id="updateApplyStatus">
         UPDATE apply SET status=true WHERE orderId=#{orderId} AND carId=#{carId}
     </update>
+
+    <select id="applyGetOrderID" resultType="com.model.Apply">
+            select * from apply where id=#{id}
+    </select>
+
 </mapper>

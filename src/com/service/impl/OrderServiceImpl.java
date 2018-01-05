@@ -26,6 +26,11 @@ public class OrderServiceImpl implements OrderService{
         return orderDao.updateOrder(id, status) > 0;
     }
 
+    @Override
+    public Map<String, Object> getOrder(int status) {
+        return orderDao.getOrder(status);
+    }
+
     /*@Override
     public Map<String , Object>  getOrder(int id) {
         return orderDao.getOrder(id);
