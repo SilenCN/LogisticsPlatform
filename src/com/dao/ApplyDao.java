@@ -13,4 +13,5 @@ public interface ApplyDao {
     Map<String,Object> selectAppliInfo(int id);
     int updateApplyStatusById(int id);
     int updateApplyStatus(int orderId,int carId);
+    Apply applyGetOrderID(int id);
 }

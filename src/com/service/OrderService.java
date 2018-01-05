@@ -9,5 +9,6 @@ public interface OrderService {
     boolean insertOrder(Order order);
 
     boolean updateOrder(int id, int status);
-//    Map<String, Object> getOrder(int id);
+
+    Map<String,Object> getOrder(int status);
 }

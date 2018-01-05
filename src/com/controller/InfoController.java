@@ -69,8 +69,9 @@ public class InfoController {
         }
     }
 
-    @ResponseBody
+
     @RequestMapping("/queryOwnerInfo")
+    @ResponseBody
     public Map<String, Object> queryownerInfo(int ownerId){
         return infoService.getOwnerInfo(ownerId);
     }

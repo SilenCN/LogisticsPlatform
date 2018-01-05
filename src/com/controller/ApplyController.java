@@ -48,4 +48,9 @@ public class ApplyController {
     public String updateApplyStatus(int orderId,int carId){
         return applyService.updateApplyStatus(orderId,carId)+"";
     }
+    @RequestMapping("/insertApply")
+    @ResponseBody
+    public String insertApply(Apply apply){
+        return applyService.insertApply(apply)+"";
+    }
 }
