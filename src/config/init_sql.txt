@@ -1,13 +1,60 @@
 create database LogisticsPlatform;
 
-create table test(id INTEGER primary key AUTO_INCREMENT,name TEXT NOT NULL,password TEXT NOT NULL);
 
-create table user(id INTEGER primary key AUTO_INCREMENT,name TEXT NOT NULL,password TEXT NOT NULL,type INTEGER NOT NULL,info BOOLEAN,createTime BIGINT);
+create table user(
+    id INTEGER primary key AUTO_INCREMENT,
+    name TEXT NOT NULL,
+    password TEXT NOT NULL,
+    type INTEGER NOT NULL,
+    info BOOLEAN,
+    createTime BIGINT);
+
+create table carInfo(
+    id INTEGER primary key,
+    phone TEXT,
+    carType INTEGER,
+    carNumber TEXT,
+    transportType TEXT
+    );
+
+create table ownerInfo(
+    id INTEGER primary key,
+    phone TEXT,
+    address TEXT,
+    goods INTEGER
+    );
+
+
 
 create table orders(
     id INTEGER primary key AUTO_INCREMENT,
-    carId INTEGER NOT NULL,
     ownerId INTEGER NOT NULL,
     status INTEGER,
     createTime BIGINT);
+
+create table orderInfo(
+    id INTEGER primary key,
+    type INTEGER,
+    goods TEXT,
+    price FLOAT,
+    weight FLOAT,
+    departure TEXT,
+    target TEXT,
+    remark TEXT
+    );
+
+create table apply(
+    id INTEGER primary key AUTO_INCREMENT,
+    orderId INTEGER,
+    carId INTEGER,
+    status BOOLEAN,
+    createTime BIGINT
+    );
+
+create table logistics(
+    orderId INTEGER primary key,
+    info TEXT,
+    createTime BIGINT
+    );
+
 

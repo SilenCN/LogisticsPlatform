@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.InfoDao">
+
+    <insert id="insertCarInfo" keyProperty="id" parameterType="com.model.CarInfo">
+        INSERT INTO carInfo(id,phone,carType,carNumber,transportType) VALUES(#{id},#{phone},#{carType},#{carNumber},#{transportType})
+    </insert>
+
+    <insert id="insertOwnerInfo" keyProperty="id" parameterType="com.model.OwnerInfo">
+        INSERT INTO ownerInfo(id,phone,address,goods) VALUES (#{id},#{phone},#{address},#{goods})
+    </insert>
+    <update id="updateOwnerInfo" keyProperty="id" parameterType="com.model.OwnerInfo">
+        UPDATE ownerInfo SET phone=#{phone},address=#{address},goods=#{goods} WHERE id=#{id}
+    </update>
+    <update id="updateCarInfo" keyProperty="id" parameterType="com.model.CarInfo">
+        UPDATE carInfo SET phone={#phone},carType={#carType},carNumber=#{carNumber},transportType=#{transportType} WHERE id=#{id}
+    </update>
+
+    <select id="getCarInfo" resultType="java.util.HashMap">
+        SELECT user.id,user.name,carInfo.phone,carInfo.carType,carInfo.carNumber,carInfo.transportType FROM user,carInfo WHERE user.id=carInfo.id AND user.id=#{id}
+    </select>
+
+    <select id="getOwnerInfo" resultType="java.util.HashMap">
+        SELECT user.id,user,name,ownerInfo.phone,ownerInfo.address,ownerInfo.goods FROM user,ownerInfo WHERE user.id=ownerInfo.id AND user.id=#{id}
+    </select>
+
+</mapper>
