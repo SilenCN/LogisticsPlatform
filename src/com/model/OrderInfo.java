@@ -1,10 +1,12 @@
 package com.model;
 
+import java.math.BigInteger;
+
 public class OrderInfo extends Order {
     private int type;
     private String goods;
-    private Float price;
     private Float weight;
+    private BigInteger deliveryTime;
     private String departure;
     private String target;
     private String remark;
@@ -25,12 +27,12 @@ public class OrderInfo extends Order {
         this.goods = goods;
     }
 
-    public Float getPrice() {
-        return price;
+    public BigInteger getDeliveryTime() {
+        return deliveryTime;
     }
 
-    public void setPrice(Float price) {
-        this.price = price;
+    public void setDeliveryTime(BigInteger deliveryTime) {
+        this.deliveryTime= deliveryTime;
     }
 
     public Float getWeight() {

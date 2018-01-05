@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.OrderInfoDao">
+
+    <insert id="insertOrderInfo"  useGeneratedKeys="true" keyProperty="id" parameterType="com.model.OrderInfo">
+        INSERT INTO orderInfo(id,type,goods,price,weight,depature,target,remark) VALUES(#{id},#{type},#{goods},#{price},#{weight},{#departure},{#target},{#remark})
+    </insert>
+
+    <select id="getOrderInfo" resultType="java.util.HashMap">
+      SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id ORDER  BY Order.createtime DESC  LIMIT 1*page,20*page
+    </select>
+
+    <select id="getOrderInfo" resultType="java.util.HashMap">
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND type={#type},departure={#departure},target={#target} ORDER  BY Ordre.createtime DESC LIMIT 1*page,15*page
+    </select>
+
+</mapper>
