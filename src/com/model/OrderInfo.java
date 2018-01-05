@@ -11,6 +11,24 @@ public class OrderInfo extends Order {
     private String target;
     private String remark;
 
+    /**
+     * 货物类型，默认全部
+     */
+    public static final int TYPE_OF_ALL=0;
+
+    /**
+     * 货物类型，
+     */
+    public static final int TYPE_OF_=1;
+
+    /**
+     * 出发地，默认
+     */
+    public static final String DEPARTURE_ALL="ALL";
+
+    public static final String TARGET_ALL="ALL";
+
+
     public int getType() {
         return type;
     }
@@ -23,9 +41,7 @@ public class OrderInfo extends Order {
         return goods;
     }
 
-    public void setGoods(String goods) {
-        this.goods = goods;
-    }
+    public void setGoods(String goods) { this.goods = goods; }
 
     public BigInteger getDeliveryTime() {
         return deliveryTime;

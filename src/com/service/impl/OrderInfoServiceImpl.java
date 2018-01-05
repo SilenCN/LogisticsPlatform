@@ -3,6 +3,7 @@ package com.service.impl;
 import com.dao.OrderInfoDao;
 import com.model.OrderInfo;
 import com.service.OrderInfoService;
+import com.sun.java.accessibility.util.AccessibilityListenerList;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -33,8 +34,28 @@ public class OrderInfoServiceImpl implements OrderInfoService {
     }
 
     @Override
+    /*根据条件显示查询结果*/
     public List<Map<String ,Object >> searchOrderInfo(int type, String departure, String target,int page){
-        return orderInfoDao.selectOrderInfo(type, departure,  target, page);
+        if(0==type && !departure.equals("ALL") && !target.equals("ALL")){
+            return orderInfoDao.selectOrderInfoExpType(departure , target ,page );
+
+        }else if(0!=type && departure.equals("ALL") && !target.equals("ALL")){
+            return orderInfoDao.selectOrderInfoExpDeparture( type , target ,page);
+
+        }else if(0!=type && !departure.equals("ALL") && target.equals("ALL")){
+            return orderInfoDao.selectOrderInfoExpTarget( type ,departure ,page);
+
+        }else if(0==type && !departure.equals("ALL") && target.equals("ALL")){
+            return orderInfoDao.selectOrderInfoByDeparture( departure ,page);
+
+        }else if(0!=type && departure.equals("ALL") && target.equals("ALL")){
+            return orderInfoDao.selectOrderInfoByType( type ,page);
+
+        }else if(0==type && departure.equals("ALL") && !target.equals("ALL")){
+            return orderInfoDao.selectOrderInfoByTarget( target ,page);
+        }
+
+        return orderInfoDao.selectOrderInfo(type, departure, target, page);
     }
 
 }

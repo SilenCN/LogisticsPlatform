@@ -9,11 +9,35 @@
     </insert>
 
     <select id="getOrderInfo" resultType="java.util.HashMap">
-      SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id ORDER  BY Order.createtime DESC  LIMIT 1*page,20*page
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND OrderInfo.departuretime > System.currentTimeMillis() ORDER  BY Order.createtime DESC  LIMIT 1*page,20*page
     </select>
 
-    <select id="getOrderInfo" resultType="java.util.HashMap">
-        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND type={#type},departure={#departure},target={#target} ORDER  BY Ordre.createtime DESC LIMIT 1*page,15*page
+    <select id="selectOrderInfo" resultType="java.util.HashMap">
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND type={#type} AND departure={#departure} AND target={#target} AND OrderInfo.departuretime > System.currentTimeMillis()ORDER  BY Ordre.createtime DESC LIMIT 1*page,20*page
+    </select>
+
+    <select id="selectOrderInfoExpType" resultType="java.util.HashMap">
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND departure={#departure} AND target={#target} AND OrderInfo.departuretime > System.currentTimeMillis()ORDER  BY Ordre.createtime DESC LIMIT 1*page,20*page
+    </select>
+
+    <select id="selectOrderInfoExpDeparture" resultType="java.util.HashMap">
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND type={#type} AND target={#target} AND OrderInfo.departuretime > System.currentTimeMillis()ORDER  BY Ordre.createtime DESC LIMIT 1*page,20*page
+    </select>
+
+    <select id="selectOrderInfoExpTarget" resultType="java.util.HashMap">
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND type={#type} AND departure={#departure} AND OrderInfo.departuretime > System.currentTimeMillis()ORDER  BY Ordre.createtime DESC LIMIT 1*page,20*page
+    </select>
+
+    <select id="selectOrderInfoByTarget" resultType="java.util.HashMap">
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND target={#target} AND OrderInfo.departuretime > System.currentTimeMillis()ORDER  BY Ordre.createtime DESC LIMIT 1*page,20*page
+    </select>
+
+    <select id="selectOrderInfoByType" resultType="java.util.HashMap">
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND type={#type} AND OrderInfo.departuretime > System.currentTimeMillis()ORDER  BY Ordre.createtime DESC LIMIT 1*page,20*page
+    </select>
+
+    <select id="selectOrderInfoByDeparture" resultType="java.util.HashMap">
+        SELECT OrderInfo.* FROM OrderInfo,Order WHERE OrderInfo.id=Order.id AND departure={#departure} AND OrderInfo.departuretime > System.currentTimeMillis()ORDER  BY Ordre.createtime DESC LIMIT 1*page,20*page
     </select>
 
 </mapper>

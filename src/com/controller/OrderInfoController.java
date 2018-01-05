@@ -22,16 +22,14 @@ public class OrderInfoController {
         return orderInfoService.insertOrderInfo(orderInfo)+"";
     }
 
-    /*
+    /**
      page表示页数，后台规定一页显示多少条，1显示20条，2显示后20条等
-    * */
+     */
     @RequestMapping("/getOrderInfoById")
     @ResponseBody
     public List<Map<String , Object >> getOrderInfoById(int page){
         return orderInfoService.getOrderInfo(page);
     }
-
-
 
     @RequestMapping("/searchOrderInfo")
     @ResponseBody
