@@ -14,6 +14,7 @@
     <update id="updateOwnerInfo" keyProperty="id" parameterType="com.model.OwnerInfo">
         UPDATE ownerInfo SET phone=#{phone},address=#{address},goods=#{goods} WHERE id=#{id}
     </update>
+
     <update id="updateCarInfo" keyProperty="id" parameterType="com.model.CarInfo">
         UPDATE carInfo SET phone={#phone},carType={#carType},carNumber=#{carNumber},transportType=#{transportType} WHERE id=#{id}
     </update>
@@ -23,7 +24,7 @@
     </select>
 
     <select id="getOwnerInfo" resultType="java.util.HashMap">
-        SELECT user.id,user,name,ownerInfo.phone,ownerInfo.address,ownerInfo.goods FROM user,ownerInfo WHERE user.id=ownerInfo.id AND user.id=#{id}
+        SELECT user.id,user.name,ownerInfo.phone,ownerInfo.address,ownerInfo.goods FROM user,ownerInfo WHERE user.id=ownerInfo.id AND user.id=#{id}
     </select>
 
 </mapper>

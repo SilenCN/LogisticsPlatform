@@ -11,9 +11,10 @@
     <update id="updateOrder" keyProperty="id" parameterType="com.model.Order">
         UPDATE order SET satatus={#status} WHERE id={#id}
     </update>
-   <!-- <select id="getOrder" resultType="java.util.HashMap">
-        SELECT order.id,order.ownerId,ownerInfo.phone,ownerInfo.address,ownerInfo.goods FROM user,ownerInfo WHERE user.id=ownerInfo.id AND user.id=#{id}
-    </select>-->
+
+    <select id="getOrder">
+        select *from orderInfo,order where order.id=orderInfo.id and order.status={#status}
+    </select>
 
 </mapper>
 
