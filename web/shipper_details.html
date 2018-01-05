@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>完善个人信息_货主</title>
+    <title>完善个人信息|货主</title>
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -38,14 +38,13 @@
 
     <link rel="shortcut icon" href="media/image/favicon.ico" />
 </head>
-<body>
 <body class="login">
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <h1 style="color: #35aa47">Shafufu</h1>
+    <img src="media/image/logo_big_gray.png">
 </div>
 <!-- END LOGO -->
-<div class="content">
+<div class="content" style="height: 500px">
 
     <!-- BEGIN LOGIN FORM -->
 
@@ -58,6 +57,24 @@
             <button class="close" data-dismiss="alert"></button>
 
             <span>请输入您的用户名和密码</span>
+
+        </div>
+
+        <div class="control-group">
+
+            <label class="control-label visible-ie8 visible-ie9">Phone</label>
+
+            <div class="controls">
+
+                <div class="input-icon left">
+
+                    <i class="icon-user"></i>
+
+                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的联系电话" name="phone"/>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -79,7 +96,7 @@
 
                         <i class="icon-user"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="省" name="username"/>
+                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="省" name="province"/>
 
                     </div>
 
@@ -105,7 +122,7 @@
 
                         <i class="icon-user"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="市" name="username"/>
+                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="市" name="city"/>
 
                     </div>
 
@@ -131,9 +148,19 @@
 
                         <i class="icon-user"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="城区" name="username"/>
+                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="城区" name="block"/>
 
                     </div>
+
+                </div>
+
+            </div>
+
+            <div class="control-group" style="padding-top: 20px">
+
+                <div class="controls">
+
+                    <textarea class="span6 m-wrap" rows="3" placeholder="详细地址" name="remarks"></textarea>
 
                 </div>
 
