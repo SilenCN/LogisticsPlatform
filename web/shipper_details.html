@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>完善个人信息|货主</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta content="" name="description" />
+
+    <meta content="" name="author" />
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+    <link href="media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
+    <link href="media/css/style.css" rel="stylesheet" type="text/css"/>
+
+    <link href="media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+    <link href="media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+    <link href="media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL STYLES -->
+
+    <link href="media/css/login.css" rel="stylesheet" type="text/css"/>
+
+    <!-- END PAGE LEVEL STYLES -->
+
+    <link rel="shortcut icon" href="media/image/favicon.ico" />
+</head>
+<body class="login">
+<!-- BEGIN LOGO -->
+<div class="logo">
+    <img src="media/image/logo_big_gray.png">
+</div>
+<!-- END LOGO -->
+<div class="content" style="height: 500px">
+
+    <!-- BEGIN LOGIN FORM -->
+
+    <form class="form-vertical login-form" action="index.html">
+
+        <h3 class="form-title">请完善您的个人信息</h3>
+
+        <div class="alert alert-error hide">
+
+            <button class="close" data-dismiss="alert"></button>
+
+            <span>请输入您的用户名和密码</span>
+
+        </div>
+
+        <div class="control-group">
+
+            <label class="control-label visible-ie8 visible-ie9">Phone</label>
+
+            <div class="controls">
+
+                <div class="input-icon left">
+
+                    <i class="icon-user"></i>
+
+                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的联系电话" name="phone"/>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <h4 class="form-title">常用发货地址</h4>
+
+        <div class="control-group">
+
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+
+            <label class="control-label visible-ie8 visible-ie9">Province</label>
+
+            <div class="controls">
+
+                <label class="control-label visible-ie8 visible-ie9">Province</label>
+
+                <div class="controls">
+
+                    <div class="input-icon left">
+
+                        <i class="icon-user"></i>
+
+                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="省" name="province"/>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="control-group">
+
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+
+            <label class="control-label visible-ie8 visible-ie9">City</label>
+
+            <div class="controls">
+
+                <label class="control-label visible-ie8 visible-ie9">City</label>
+
+                <div class="controls">
+
+                    <div class="input-icon left">
+
+                        <i class="icon-user"></i>
+
+                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="市" name="city"/>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="control-group">
+
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+
+            <label class="control-label visible-ie8 visible-ie9">Block</label>
+
+            <div class="controls">
+
+                <label class="control-label visible-ie8 visible-ie9">Block</label>
+
+                <div class="controls">
+
+                    <div class="input-icon left">
+
+                        <i class="icon-user"></i>
+
+                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="城区" name="block"/>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="control-group" style="padding-top: 20px">
+
+                <div class="controls">
+
+                    <textarea class="span6 m-wrap" rows="3" placeholder="详细地址" name="remarks"></textarea>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="control-group">
+            <label class="control-label"></label>
+            <div class="controls">
+                <select name="goods" id="goods_list" class="span6" style="width: 200px">
+                    <option value="">请选择常用货物类型</option>
+                    <option value="1">生鲜</option>
+                    <option value="2">化学物品</option>
+                    <option value="3">易燃易爆物品</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button id="register-back-btn" type="button" class="btn">
+
+                <i class="m-icon-swapleft"></i>  返回
+
+            </button>
+
+            <button type="submit" class="btn green pull-right">
+
+                登陆 <i class="m-icon-swapright m-icon-white"></i>
+
+            </button>
+
+        </div>
+
+    </form>
+
+    <!-- END LOGIN FORM -->
+
+
+</div>
+
+<!-- END LOGIN -->
+</body>
+</html>
