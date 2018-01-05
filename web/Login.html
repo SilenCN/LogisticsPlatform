@@ -70,7 +70,7 @@
 
     <!-- BEGIN LOGIN FORM -->
 
-    <form class="form-vertical login-form" action="index.html">
+    <form class="form-vertical login-form" action="Login.html">
 
         <h3 class="form-title">请登陆您的账户</h3>
 
@@ -136,7 +136,7 @@
 
                     <i class="icon-lock"></i>
 
-                    <input class="m-wrap placeholder-no-fix" type="password" placeholder="验证码" name="vrifiedcode" style="width: 100px"/>
+                    <input class="m-wrap placeholder-no-fix" type="password" placeholder="验证码" id="Login_Submit" name="vrifiedcode" style="width: 100px"/>
                     <img src="/CheckCode/create"/>
 
                 </div>
@@ -173,7 +173,7 @@
 
     <!-- BEGIN REGISTRATION FORM -->
 
-    <form class="form-vertical register-form" action="index.html">
+    <form class="form-vertical register-form" action="/" onsubmit="return false;">
 
         <h3 class="">创建用户</h3>
 
@@ -189,7 +189,7 @@
 
                     <i class="icon-user"></i>
 
-                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的用户名" name="username"/>
+                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的用户名" name="username" id="txt_username"/>
 
                 </div>
 
@@ -225,7 +225,7 @@
 
                     <i class="icon-ok"></i>
 
-                    <input class="m-wrap placeholder-no-fix" type="password" placeholder="请再次输入您的密码" name="rpassword"/>
+                    <input class="m-wrap placeholder-no-fix" type="password" placeholder="请再次输入您的密码" name="rpassword" id="rePassword"/>
 
                 </div>
 
@@ -236,7 +236,7 @@
         <div class="control-group">
             <div class="controls controls-uniform">
                 <label class="radio">
-                    <input type="radio" name="optionsRadios2" value="司机" />
+                    <input type="radio" name="optionsRadios2" value="司机" id="RadioCarType"/>
                     司机
                 </label>
                 <label class="radio">
@@ -256,7 +256,7 @@
 
                     <i class="icon-lock"></i>
 
-                    <input class="m-wrap placeholder-no-fix" type="password" placeholder="验证码" name="vrifiedcode" style="width: 100px"/>
+                    <input class="m-wrap placeholder-no-fix" type="password" placeholder="验证码" name="vrifiedcode" id="loginCheckCode" style="width: 100px"/>
                     <img src="/CheckCode/create"/>
 
                 </div>
@@ -273,7 +273,7 @@
 
             </button>
 
-            <button type="submit" id="register-submit-btn" class="btn green pull-right">
+            <button type="submit" id="register-submit-btn" href="javascript:void(0);"  class="btn green pull-right">
 
                 注册 <i class="m-icon-swapright m-icon-white"></i>
 
@@ -334,6 +334,8 @@
 
 <script src="media/js/login.js" type="text/javascript"></script>
 
+<script src="javascript/register.js" type="text/javascript"></script>
+<script src="javascript/login.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 
 <script>
