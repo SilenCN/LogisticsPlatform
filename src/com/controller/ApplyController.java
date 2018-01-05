@@ -18,16 +18,31 @@ import java.util.Map;
 public class ApplyController {
     @Resource
     private ApplyService applyService;
+
+    @RequestMapping("/getApplyInfo")
+    @ResponseBody
+    public Map<String , Object> getApplyInfo(int orderId, int carId){
+        return (Map<String, Object>) applyService.getApply( orderId, carId );
+    }
+
     @RequestMapping("/getApplyCarInfoList")
     @ResponseBody
     public List<Map<String, Object>> selectApplyCarInfoList(int orderId){
         return applyService.getApplyCarInfoList(orderId);
     }
+
+    @RequestMapping("/getApply")
+    @ResponseBody
+    public Map<String , Object> selectApplyInfo(int id){
+        return applyService.getApplyInfo(id);
+    }
+
     @RequestMapping("/updateApplyStatusById")
     @ResponseBody
     public String updateApplyStatusById(int id){
         return applyService.updateApplyStatus(id)+"";
     }
+
     @RequestMapping("/updateApplyStatus")
     @ResponseBody
     public String updateApplyStatus(int orderId,int carId){

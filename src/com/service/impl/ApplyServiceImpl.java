@@ -21,21 +21,18 @@ public class ApplyServiceImpl implements ApplyService {
     @Override
     public boolean insertApply(Apply apply) {
         apply.setCreateTime(System.currentTimeMillis());
-        if (!(applyDao.apply(apply) > 0)) {
+        if (!(applyDao.insertApply(apply) > 0)) {
             return false;
         }
-
         return orderService.updateOrder(apply.getOrderId(), Order.STATUS_WAIT_CHECK);
     }
 
     @Override
     public boolean updateApplyStatus(int id) {
-/*        if (!(applyDao.updateApplyStatusById(id) > 0)){
+        if (!(applyDao.updateApplyStatusById(id) > 0)){
             return false;
         }
-        return orderService.updateOrder();*/
-        //TODO:根据Apply的ID修改状态，未获取到OrderId，不能修改Order状态
-        return false;
+        return orderService.updateOrder(applyDao.queryById(id).getId(), Order.STATUS_IN_TRANSIT);
     }
 
     @Override
@@ -55,5 +52,10 @@ public class ApplyServiceImpl implements ApplyService {
     @Override
     public List<Map<String, Object>> getApplyCarInfoList(int orderId) {
         return applyDao.selectApplyCarInfoList(orderId);
+    }
+
+    @Override
+    public Map<String,Object> getApplyInfo(int id){
+        return applyDao.selectAppliInfo(id);
     }
 }
