@@ -9,6 +9,6 @@ public interface ApplyDao {
     int apply(Apply apply);
     Apply queryApply(int orderId,int carId);
     List<Map<String,Object>> selectApplyCarInfoList(int orderId);
-    int updateApplyStatus(int id);
+    int updateApplyStatusById(int id);
     int updateApplyStatus(int orderId,int carId);
 }

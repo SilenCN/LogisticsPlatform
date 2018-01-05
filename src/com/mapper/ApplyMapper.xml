@@ -14,4 +14,11 @@
     <select id="selectApplyCarInfoList" resultType="java.util.HashMap">
         SELECT apply.id,apply.carId,user.name,apply.createTime, FROM user,apply WHERE  apply.carId=user.id AND orderId=#{orderId}
     </select>
+
+    <update id="updateApplyStatusById">
+        UPDATE apply SET status=true WHERE id=#{id}
+    </update>
+    <update id="updateApplyStatus">
+        UPDATE apply SET status=true WHERE orderId=#{orderId} AND carId=#{carId}
+    </update>
 </mapper>
