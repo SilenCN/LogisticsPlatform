@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.LogisticsDao">
+    <insert id="insertLogistics"  parameterType="com.model.Apply">
+        insert into logistics(orderId,info)values(#{orderId},#{info})
+    </insert>
+
+    <select id="getLogistics"  parameterType="java.util.HashMap">
+        select*from logistics where orderId={#orderId}
+    </select>
+</mapper>
