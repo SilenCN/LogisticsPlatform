@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>完善个人信息|货主</title>
-
+    <title>个人中心|司机</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <meta content="" name="description" />
@@ -47,16 +46,27 @@
 <div class="content">
 
     <!-- BEGIN LOGIN FORM -->
+    <div class="form-vertical login-form" action="index.html" >
 
-    <form class="form-vertical login-form" action="index.html">
+        <h3 class="form-title">修改您的账户信息和个人信息</h3>
 
-        <h3 class="form-title">请完善您的个人信息</h3>
+        <h4>用户名：</h4>
 
-        <div class="alert alert-error hide">
+        <div class="control-group">
 
-            <button class="close" data-dismiss="alert"></button>
+            <label class="control-label visible-ie8 visible-ie9">Password</label>
 
-            <span>请输入您的用户名和密码</span>
+            <div class="controls">
+
+                <div class="input-icon left">
+
+                    <i class="icon-lock"></i>
+
+                    <input class="m-wrap placeholder-no-fix" type="password" id="register_password" placeholder="请输入您的密码" name="password"/>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -78,23 +88,48 @@
 
         </div>
 
+        <div class="control-group">
 
-            <div class="control-group" style="padding-top: 15px">
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+
+            <label class="control-label visible-ie8 visible-ie9">CarNumber</label>
+
+            <div class="controls">
+
+                <label class="control-label visible-ie8 visible-ie9">CarNumber</label>
 
                 <div class="controls">
 
-                    <textarea  rows="3" placeholder="详细地址" name="remarks"style="width: 277px"></textarea>
+                    <div class="input-icon left">
+
+                        <i class="icon-user"></i>
+
+                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="车牌号" name="CarNumber"/>
+
+                    </div>
 
                 </div>
 
             </div>
 
+        </div>
+        <div class="control-group">
+            <label class="control-label"></label>
+            <div class="controls">
+                <select name="car" id="car_list" class="span6" style="width: 290px">
+                    <option value="">请选择车型</option>
+                    <option value="1">小型货车</option>
+                    <option value="2">中型货车</option>
+                    <option value="3">大型货车</option>
+                </select>
+            </div>
+        </div>
 
         <div class="control-group">
             <label class="control-label"></label>
             <div class="controls">
-                <select name="goods" id="goods_list" class="span6" style="width: 200px">
-                    <option value="">请选择常用货物类型</option>
+                <select name="goods" id="goods_list" class="span6" style="width: 290px">
+                    <option value="">请选择承运货物类型</option>
                     <option value="1">生鲜</option>
                     <option value="2">化学物品</option>
                     <option value="3">易燃易爆物品</option>
@@ -102,28 +137,22 @@
             </div>
         </div>
 
+
         <div class="form-actions">
-            <button id="register-back-btn" type="button" class="btn">
 
-                <i class="m-icon-swapleft"></i>  返回
+            <button type="submit" class="btn green pull-right" >
 
-            </button>
-
-            <button type="submit" class="btn green pull-right">
-
-                登陆 <i class="m-icon-swapright m-icon-white"></i>
+                确认修改 <i class="m-icon-swapright m-icon-white"></i>
 
             </button>
 
         </div>
 
-    </form>
+        </form>
 
-    <!-- END LOGIN FORM -->
+        <!-- END LOGIN FORM -->
 
 
-</div>
-
-<!-- END LOGIN -->
+    </div>
 </body>
 </html>
