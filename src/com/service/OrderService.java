@@ -2,6 +2,7 @@ package com.service;
 
 import com.model.Order;
 
+import java.util.List;
 import java.util.Map;
 
 public interface OrderService {
@@ -10,5 +11,5 @@ public interface OrderService {
 
     boolean updateOrder(int id, int status);
 
-    Map<String,Object> getOrder(int status);
+    List<Map<String,Object>> getOrder(int status, int page);
 }

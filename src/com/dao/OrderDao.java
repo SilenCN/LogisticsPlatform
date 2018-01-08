@@ -2,6 +2,7 @@ package com.dao;
 
 import com.model.Order;
 
+import java.util.List;
 import java.util.Map;
 //import java.util.Map;
 
@@ -10,5 +11,5 @@ public interface OrderDao {
 
     int updateOrder(int id, int status);
 
-    Map<String,Object> getOrder(int status);
+    List<Map<String,Object>> getOrder(int status, int page);
 }
