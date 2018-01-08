@@ -27,12 +27,16 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
+    public boolean updateOrderById(int id ){ return orderDao.updateOrderById(id) > 0; }
+
+    @Override
+    public boolean deleteOrder(int id) { return orderDao.deleteOrder( id ) > 0;}
+
+    @Override
     public List<Map<String, Object>> getOrder(int status, int page) {
         return orderDao.getOrder(status,page);
     }
 
-    /*@Override
-    public Map<String , Object>  getOrder(int id) {
-        return orderDao.getOrder(id);
-    }*/
+    @Override
+    public List<Map<String , Object >>selectOrder(int page) { return orderDao.selectOrder(page); }
 }

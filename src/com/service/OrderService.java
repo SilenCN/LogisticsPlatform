@@ -11,5 +11,11 @@ public interface OrderService {
 
     boolean updateOrder(int id, int status);
 
+    boolean updateOrderById(int id );
+
+    boolean deleteOrder(int id);
+
     List<Map<String,Object>> getOrder(int status, int page);
+
+    List<Map<String ,Object >> selectOrder(int page);
 }

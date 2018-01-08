@@ -8,5 +8,6 @@ import java.util.Map;
 
 public interface LogisticsService {
     boolean insertLogistics(Logistics logistics);
-    Map<String,Object> getLogistics(int orderId);
+
+    List<Map<String,Object>> getLogistics(int orderId);
 }

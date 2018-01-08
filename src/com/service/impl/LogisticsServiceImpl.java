@@ -6,6 +6,7 @@ import com.service.LogisticsService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 @Service("logisticsService")
@@ -21,9 +22,8 @@ public class LogisticsServiceImpl implements LogisticsService{
         return true;
     }
 
-
     @Override
-    public Map<String, Object> getLogistics(int orderId) {
+    public List<Map<String, Object>> getLogistics(int orderId) {
         return logisticsDao.getLogistics(orderId);
     }
 }

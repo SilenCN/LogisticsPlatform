@@ -15,18 +15,31 @@ import java.util.Map;
 public class OrderController {
     @Resource
     private OrderService orderService;
-    @RequestMapping("updateOrder")
+
     @ResponseBody
+    @RequestMapping("/updateOrder")
     public String updateOrder(int id,int status){ return orderService.updateOrder(id,status)+"";}
 
-    @RequestMapping("insertOrder")
     @ResponseBody
+    @RequestMapping("/updateOrderById")
+    public String updataOrderById( int id ){ return orderService.updateOrderById( id )+""; }
+
+    @ResponseBody
+    @RequestMapping("/deleteOrder")
+    public String deleteOrder( int id ) { return orderService.deleteOrder( id ) +""; }
+
+    @ResponseBody
+    @RequestMapping("/insertOrder")
     public String insertOrder(Order order){return orderService.insertOrder(order)+"";}
 
-    @RequestMapping("getOrder")
     @ResponseBody
+    @RequestMapping("/getOrder")
     public List<Map<String,Object>> getOrder(int status,int page){
         return orderService.getOrder(status,page);
     }
+
+    @ResponseBody
+    @RequestMapping("/selectOrder")
+    public List<Map<String , Object >> selectOrder(int page){ return orderService.selectOrder(page); }
 
 }

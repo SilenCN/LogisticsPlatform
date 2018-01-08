@@ -21,7 +21,7 @@ public class Order {
 
     private int id;
     private int ownerId;
-    private int status;
+    private int status=STATUS_NO_APPLY;
     private long createTime;
 
     public int getId() {

@@ -2,10 +2,16 @@ package com.dao;
 
 import com.model.Logistics;
 
+import java.util.List;
 import java.util.Map;
 
 public interface LogisticsDao {
     int insertLogistics(Logistics logistics);
 
-    Map<String, Object> getLogistics(int orderId);
+    /**
+     * 一个订单号对应多条物流信息，在运单表中没有主键
+     * @param orderId
+     * @return
+     */
+    List<Map<String, Object>> getLogistics(int orderId);
 }
