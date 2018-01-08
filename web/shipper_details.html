@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>完善个人信息|货主</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -36,7 +36,7 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="media/image/favicon.ico" />
+    <link rel="shortcut icon" href="media/image/favicon.ico"/>
 </head>
 <body class="login">
 <!-- BEGIN LOGO -->
@@ -48,7 +48,7 @@
 
     <!-- BEGIN LOGIN FORM -->
 
-    <form class="form-vertical login-form" action="index.html">
+    <form class="form-vertical login-form" action="/" onsubmit="return false;">
 
         <h3 class="form-title">请完善您的个人信息</h3>
 
@@ -70,7 +70,8 @@
 
                     <i class="icon-user"></i>
 
-                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的联系电话" name="phone"/>
+                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的联系电话" name="phone"
+                           id="shipper_info_pone"/>
 
                 </div>
 
@@ -79,22 +80,23 @@
         </div>
 
 
-            <div class="control-group" style="padding-top: 15px">
+        <div class="control-group" style="padding-top: 15px">
 
-                <div class="controls">
+            <div class="controls">
 
-                    <textarea  rows="3" placeholder="详细地址" name="remarks"style="width: 277px"></textarea>
-
-                </div>
+                <textarea rows="3" placeholder="详细地址" name="address" style="width: 277px"
+                          id="shipper_info_address"></textarea>
 
             </div>
+
+        </div>
 
 
         <div class="control-group">
             <label class="control-label"></label>
             <div class="controls">
                 <select name="goods" id="goods_list" class="span6" style="width: 200px">
-                    <option value="">请选择常用货物类型</option>
+                    <option value="0">请选择常用货物类型</option>
                     <option value="1">生鲜</option>
                     <option value="2">化学物品</option>
                     <option value="3">易燃易爆物品</option>
@@ -105,11 +107,11 @@
         <div class="form-actions">
             <button id="register-back-btn" type="button" class="btn">
 
-                <i class="m-icon-swapleft"></i>  返回
+                <i class="m-icon-swapleft"></i> 返回
 
             </button>
 
-            <button type="submit" class="btn green pull-right">
+            <button type="submit" id="shipper-detail-submit-bn" href="javascript:void(0);" class="btn green pull-right">
 
                 登陆 <i class="m-icon-swapright m-icon-white"></i>
 
@@ -120,10 +122,40 @@
     </form>
 
     <!-- END LOGIN FORM -->
-
-
 </div>
+<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
 
+<script src="media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+<script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+
+<script src="media/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--[if lt IE 9]>
+
+<script src="media/js/excanvas.min.js"></script>
+
+<script src="media/js/respond.min.js"></script>
+
+<![endif]-->
+
+<script src="media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+<script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>
+
+<script src="media/js/jquery.cookie.min.js" type="text/javascript"></script>
+
+<script src="media/js/jquery.uniform.min.js" type="text/javascript"></script>
+
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+<script src="media/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="javascript/Shipper_details.js" type="text/javascript"></script>
 <!-- END LOGIN -->
 </body>
+
 </html>

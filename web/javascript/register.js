@@ -6,7 +6,7 @@ var type = 1;
 
 
 function checkName() {
-    if (null == name || name=="") {
+    if (null == name || name == "") {
         alert("请输入用户名");
         return false;
     }
@@ -14,7 +14,7 @@ function checkName() {
 }
 
 function checkPassword() {
-    if (null == password || password=="") {
+    if (null == password || password == "") {
         alert("请输入密码");
         return false;
     }
@@ -22,15 +22,15 @@ function checkPassword() {
 }
 
 function reCheckPassword() {
-    if (null == rePassword || rePassword=="") {
+    if (null == rePassword || rePassword == "") {
         alert("请再次输入密码");
         return false;
     }
-    return rePassword==password;
+    return rePassword == password;
 }
 
 function checkCodeStatus() {
-    if (null == checkCode || checkCode=="") {
+    if (null == checkCode || checkCode == "") {
         alert("请输入验证码");
         return false;
     } else if (checkCode.length != 4) {
@@ -44,20 +44,20 @@ function register() {
     $.ajax({
         type: 'POST',
         url: '/user/create',
-        data: 'name=' + name+"&password="+password+"&type="+type+"&checkCode="+checkCode,
+        data: 'name=' + name + "&password=" + password + "&type=" + type + "&checkCode=" + checkCode,
         async: false,
         success: function (data) {
             console.log(data);
-          //  var obj=JSON.parse(data);
+            //  var obj=JSON.parse(data);
 
             console.log(data.result);
-            if (data.result=="true"){
-                if (type==1){
+            if (data.result == "true") {
+                if (type == 1) {
                     window.location.href = "driver_details.html";
-                }else{
-                    window.location.href="shipper_details.html"
+                } else {
+                    window.location.href = "shipper_details.html"
                 }
-            }else{
+            } else {
                 alert(data.reason);
             }
         }
@@ -65,21 +65,21 @@ function register() {
     return false;
 }
 
-function submit() {
+function submitData() {
     name = $.trim($('#txt_username').val());
     password = $.trim($('#register_password').val());
     rePassword = $.trim($('#rePassword').val());
-    if(document.getElementById("RadioCarType").checked){
-        type=1;
-    }else{
-        type=2;
+    if (document.getElementById("RadioCarType").checked) {
+        type = 1;
+    } else {
+        type = 2;
     }
     checkCode = $.trim($('#loginCheckCode').val())
 
-    if (checkName()||checkPassword()||checkCodeStatus()){
+    if (checkName() && checkPassword() && checkCodeStatus()) {
         register();
-        return false;
     }
+
 }
 
 
@@ -88,7 +88,7 @@ $(function () {
         //防止重复提交
         // submitBtnAvailability('disable');
 //    	setTimeout(function(){
-        submit();
+        submitData();
 //        }, 300);
 
     });

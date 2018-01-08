@@ -193,6 +193,7 @@ var App = function () {
                 App.scrollTop();
 
                 var url = $(this).attr("href");
+                console.log(url);
                 var menuContainer = jQuery('.page-sidebar ul');
                 var pageContent = $('.page-content');
                 var pageContentBody = $('.page-content .page-content-body');

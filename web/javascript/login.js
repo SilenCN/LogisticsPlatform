@@ -1,137 +1,77 @@
-var phone;
-var phoneStatus;
+var name;
 var password;
-var rePassword;
-var passwordStatus;
 var checkCode;
-var codeStatus;
 
-function checkPhone() {
-    if (phone == "") {
-        alert("请输入手机号码！");
-        return false;
-    } else {
-        $.ajax({
-            type: 'POST',
-            url: '/check/CheckPhone',
-            data: 'phone=' + phone,
-            async: false,
-            success: function (flg) {
-                if (flg == "true") {
-                    phoneStatus = true;
-                } else {
-                    phoneStatus = false;
-                }
-            }
-        });
-        if (!phoneStatus) {
-            alert("手机号码格式不正确！");
-        }else{
-            $.ajax({
-                type: 'POST',
-                url: '/CheckPhoneExistServlet',
-                data: 'phone=' + phone,
-                async: false,
-                success: function (flg) {
-                    if (flg == "true") {
-                        phoneStatus = true;
-                    } else {
-                        phoneStatus = false;
-                        alert("手机号码已存在！");
-                    }
-                }
-            });
-        }
-        return phoneStatus;
+function checkName() {
+    if (null!=name&&name.length>0){
+        return true;
     }
+    alert("请输入用户名");
+    return false;
 }
-
 function checkPassword() {
-    if (password == "") {
-        alert("请输入密码！");
-        return false;
-    } else {
-        if (password.toString().length < 6) {
-            alert("密码位数过低！")
-            return false;
-        } else if (password.toString().search("[a-zA-Z]") < 0) {
-            alert("密码过于简单！")
-        } else {
-            return checkRePassword();
-        }
+    if (null!=password&&password.length>0){
+        return true;
     }
-}
-
-function checkRePassword() {
-    if (rePassword == "") {
-        alert("请再次输入密码！");
-        return false;
-    } else {
-        if (rePassword != password) {
-            alert("两次输入的密码不正确！");
-            return false;
-        } else {
-            passwordStatus = true;
-            return true;
-        }
-    }
+    alert("请输入密码");
+    return false;
 }
 
 function checkCodeStatus() {
+    if (null!=checkCode&&checkCode.length==4){
+        return true;
+    }
+    alert("请输入验证码");
+    return false;
+}
+function checkInfoStatus() {
+    $.ajax({
+        type: 'POST',
+        url: '/user/checkImprovedInfo',
+        data: 't=' +Math.random(),
+        async: false,
+        success: function (data) {
+            if (data=="true"){
+                window.location.href = "page1.html";
+            }else{
+                if (getCookie("userType")=="1"){
+                    window.location.href="driver_details.html";
+                }else {
+                    window.location.href="shipper_details.html";
+                }
+            }
+        }
+    });
+}
+function submit() {
+    name = $.trim($('#login_input_username').val());
+    password = $.trim($('#login_input_password').val());
+    checkCode = $.trim($('#login_input_checkcode').val());
 
-    if (checkCode == "") {
-        alert("请输入验证码！");
-        return false;
-    } else {
+    if (checkName() && checkPassword() && checkCodeStatus()) {
         $.ajax({
             type: 'POST',
-            url: '/CheckCode',
-            data: 'code=' + checkCode,
+            url: '/user/login',
+            data: 'name=' + name+'&password='+password+'&checkCode='+checkCode,
             async: false,
-            success: function (flg) {
-                if (flg == "true") {
-                    codeStatus = true;
-                } else {
-                    codeStatus = false;
+            success: function (data) {
+                if (data.result=="true"){
+                    checkInfoStatus();
+                }else{
+                    alert(data.reason.toString());
                 }
             }
         });
-        if (!codeStatus) {
-            alert("验证码输入错误！");
-        }
-        return codeStatus;
-    }
-}
-
-function submitRegister() {
-    phone = $.trim($('#txt_username').val());
-    password = $.trim($('#txt_password').val());
-    rePassword = $.trim($('#txt_repassword').val());
-    checkCode = $.trim($('#txt_vcode').val());
-    if (checkPhone() && checkPassword() && checkCodeStatus()) {
-        $.ajax({
-            type: 'POST',
-            url: '/RegisterServlet',
-            data: 'phone=' + phone+'&password='+password,
-            async: false,
-            success: function (flg) {
-                alert("注册成功！")
-            }
-        });
     } else {
         return false;
     }
 }
 
-function changeCode() {
-    document.getElementById("vcode").src = "/CreateCheckCode?t=" + Math.random();
-}
 
 
-/*
 $(function () {
     //提交注册
-    $('#Login_Submit').bind("click", function () {
+    $('#login_submit_button').bind("click", function () {
         //防止重复提交
         // submitBtnAvailability('disable');
 //    	setTimeout(function(){
@@ -139,4 +79,4 @@ $(function () {
 //        }, 300);
 
     });
-});*/
+});
