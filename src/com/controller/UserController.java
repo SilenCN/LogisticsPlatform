@@ -35,7 +35,12 @@ public class UserController {
             if (id == -1) {
                 map.put("reason", "用户名已存在");
             } else {
-                response.addCookie(new Cookie("userId", id + ""));
+                Cookie userIdCookie=new Cookie("userId",id+"");
+                userIdCookie.setPath("/");
+                response.addCookie(userIdCookie);
+                Cookie userTypeCookie=new Cookie("userType",user.getType()+"");
+                userTypeCookie.setPath("/");
+                response.addCookie(userTypeCookie);
                 map.put("result", "true");
                 return map;
             }
@@ -55,8 +60,12 @@ public class UserController {
             if (null == temp) {
                 map.put("reason", "用户名或密码错误");
             } else {
-                response.addCookie(new Cookie("userId", temp.getId() + ""));
-                response.addCookie(new Cookie("userType", temp.getType() + ""));
+                Cookie userIdCookie=new Cookie("userId",id+"");
+                userIdCookie.setPath("/");
+                response.addCookie(userIdCookie);
+                Cookie userTypeCookie=new Cookie("userType",user.getType()+"");
+                userTypeCookie.setPath("/");
+                response.addCookie(userTypeCookie);
                 map.put("result", "true");
                 map.put("info", temp.isInfo() + "");
                 map.put("type", temp.getType() + "");
