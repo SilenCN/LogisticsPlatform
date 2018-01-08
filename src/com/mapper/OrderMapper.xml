@@ -13,7 +13,7 @@
     </update>
 
     <select id="getOrder">
-        select *from orderInfo,order where order.id=orderInfo.id and order.status={#status}
+        select orderInfo.type,orderInfo.goods,orderInfo.weight,orderInfo.deliveryTime,orderInfo.departure,orderInfo.target,orderInfo.remark from orderInfo,order where order.id=orderInfo.id and order.status={#status} AND Order.createTime > System.currentTimeMillis()ORDER  BY Order.createtime DESC LIMIT (page-1)20+1,20*page
     </select>
 
 </mapper>
