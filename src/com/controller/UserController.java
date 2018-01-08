@@ -60,10 +60,10 @@ public class UserController {
             if (null == temp) {
                 map.put("reason", "用户名或密码错误");
             } else {
-                Cookie userIdCookie=new Cookie("userId",id+"");
+                Cookie userIdCookie=new Cookie("userId",temp.getId()+"");
                 userIdCookie.setPath("/");
                 response.addCookie(userIdCookie);
-                Cookie userTypeCookie=new Cookie("userType",user.getType()+"");
+                Cookie userTypeCookie=new Cookie("userType",temp.getType()+"");
                 userTypeCookie.setPath("/");
                 response.addCookie(userTypeCookie);
                 map.put("result", "true");
