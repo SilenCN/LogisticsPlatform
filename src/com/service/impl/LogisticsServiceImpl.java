@@ -3,10 +3,12 @@ package com.service.impl;
 import com.dao.LogisticsDao;
 import com.model.Logistics;
 import com.service.LogisticsService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Map;
 
+@Service("logisticsService")
 public class LogisticsServiceImpl implements LogisticsService{
     @Resource
     private LogisticsDao logisticsDao;

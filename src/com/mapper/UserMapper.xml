@@ -10,7 +10,7 @@
     <select id="getUserByName" parameterType="String" resultType="com.model.User">
         SELECT * FROM user WHERE name=#{name}
     </select>
-    <select id="getUserById" parameterType="String" resultType="com.model.User">
+    <select id="getUserById" resultType="com.model.User">
         SELECT * FROM user WHERE id=#{id}
     </select>
 </mapper>
