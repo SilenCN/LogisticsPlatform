@@ -1,12 +1,10 @@
 package com.model;
 
-import java.math.BigInteger;
-
 public class OrderInfo extends Order {
     private int type;
     private String goods;
     private Float weight;
-    private BigInteger deliveryTime;
+    private long deliveryTime;
     private String departure;
     private String target;
     private String remark;
@@ -17,17 +15,14 @@ public class OrderInfo extends Order {
     public static final int TYPE_OF_ALL=0;
 
     /**
-     * 货物类型，
-     */
-    public static final int TYPE_OF_=1;
-
-    /**
-     * 出发地，默认
+     * 出发地，默认全部
      */
     public static final String DEPARTURE_ALL="ALL";
 
+    /**
+     * 目的地，默认全部
+     */
     public static final String TARGET_ALL="ALL";
-
 
     public int getType() {
         return type;
@@ -43,11 +38,11 @@ public class OrderInfo extends Order {
 
     public void setGoods(String goods) { this.goods = goods; }
 
-    public BigInteger getDeliveryTime() {
+    public long getDeliveryTime() {
         return deliveryTime;
     }
 
-    public void setDeliveryTime(BigInteger deliveryTime) {
+    public void setDeliveryTime(long deliveryTime) {
         this.deliveryTime= deliveryTime;
     }
 

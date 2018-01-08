@@ -22,6 +22,12 @@ public class OrderInfoController {
         return orderInfoService.insertOrderInfo(orderInfo)+"";
     }
 
+    @ResponseBody
+    @RequestMapping("/deleteOrderInfo")
+    public String deleteOrderInfo(int id){
+        return orderInfoService.deleteOrderInfo(id)+"";
+    }
+
     /**
      page表示页数，后台规定一页显示多少条，1显示20条，2显示后20条等
      */

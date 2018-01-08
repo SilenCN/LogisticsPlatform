@@ -8,6 +8,8 @@ import java.util.Map;
 public interface OrderInfoDao {
     int insertOrderInfo(OrderInfo orderInfo);
 
+    int deleteOrderInfo(int id);
+
     List<Map<String , Object>> getOrderInfo(int page);
 
     List<Map<String , Object>> selectOrderInfo(int type, String departure, String target,int page);
