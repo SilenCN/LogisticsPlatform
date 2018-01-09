@@ -2,300 +2,314 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>物流运输平台首页</title>
-    <link href="mmk_media/css/page1_layout.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+<title>物流运输平台首页</title>
+<link href="mmk_media/css/page1_layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	function showElement() {
+		document.getElementById("detaile1").style.display="block";
+	}
+	function hideElement() {
+		document.getElementById("detaile1").style.display="none";
+	}
+</script>
 </head>
 
 <body>
 <div class="baseplate" align="center">
 
     <div class="header">
-        <img class="logo" src="mmk_media/image/logo_big_touming.png" alt="logo" />
+        <img class="logo" src="mmk_media/image/logo_big_touming.png" alt="logo" /> 
         <img class="slash" src="mmk_media/image/slash.png" alt="" />
         <img class="webtitle" src="mmk_media/image/title2.png" alt="">
     </div>
 
     <div class="article">
-
-        <hr class="hr_style1"/>
-
-        <div class="topnav">
+    
+    	<hr class="hr_style1"/>
+        
+    	<div class="topnav">
             <a class="menu active" href="page1.html">主页</a>
             <a class="menu" href="page2.html">我的订单</a>
             <a class="menu" href="page3.html">发布订单</a>
             <a class="menu" href="#aboutus">关于我们</a>
             <a class="exit" href="">退出账号</a>
             <a href="page4.html">
-                <img class="personalcenter" src="mmk_media/image/personalcenter.png" alt="个人中心"  />
+            	<img class="personalcenter" src="mmk_media/image/personalcenter.png" alt="个人中心"  />
             </a>
             <a href="page5.html">
-                <img class="message" src="mmk_media/image/message.png" alt="信息" />
+            	<img class="message" src="mmk_media/image/message.png" alt="信息" />
             </a>
         </div>
-
+        
         <div class="container1">
             <div class="photos">
-                <img class="poster" src="mmk_media/image/poster3.jpg" alt="" />
+            <img class="poster" src="mmk_media/image/poster3.jpg" alt="" />
             </div>
         </div>
-
+        
         <div class="container2" style="width:1000px;">
-
-            <form action=""  onsubmit="return false;">
-                <img class="zbfl" src="mmk_media/image/zbfl.png" alt="" />
-                <img class="zbfr" src="mmk_media/image/zbfr.png" alt="" />
-                <br />	<br />	<br />
-
-                <div style="width:80%">
-                    <hr class="hr_style3" />
-                    <label class="resultstitle">货运需求信息</label><br />
+        
+        <form action="">
+        	<img class="zbfl" src="mmk_media/image/zbfl.png" alt="" />
+            <img class="zbfr" src="mmk_media/image/zbfr.png" alt="" />
+        	<br />	<br />	<br />
+            
+            <div style="width:80%">
+            	<hr class="hr_style3" />
+            	<label class="resultstitle">货运需求信息</label><br />
+            </div>
+            
+        	<label>起始地：</label>
+            <div class="styled-select" style="width:120px;">
+                <select id="startplace" name="startplace">
+                    <option>安徽省</option>
+                    <option>北京市</option>
+                    <option>重庆市</option>
+                    <option>福建省</option>
+                    <option>甘肃省</option>
+                    <option>广东省</option>
+                    <option>广西省</option>
+                    <option>贵州省</option>
+                    <option>海南省</option>
+                    <option>河北省</option>
+                    <option>河南省</option>
+                    <option>黑龙江省</option>
+                    <option>湖北省</option>
+                    <option>湖南省</option>
+                    <option>吉林省</option>
+                    <option>江苏省</option>
+                    <option>江西省</option>
+                    <option>辽宁省</option>
+                    <option>内蒙古省</option>
+                    <option>青海省</option>
+                    <option>山东省</option>
+                    <option>山西省</option>
+                    <option>陕西省</option>
+                    <option>上海市</option>
+                    <option>四川省</option>
+                    <option>天津市</option>
+                    <option>西藏省</option>
+                    <option>新疆省</option>
+                    <option>云南省</option>
+                    <option>浙江省</option>
+                    <option selected>全部</option>
+                </select>
+            </div>
+            <label>目的地：</label>
+            <div class="styled-select" style="width:120px;">
+                <select id="destination" name="destination">
+                    <option>安徽省</option>
+                    <option>北京市</option>
+                    <option>重庆市</option>
+                    <option>福建省</option>
+                    <option>甘肃省</option>
+                    <option>广东省</option>
+                    <option>广西省</option>
+                    <option>贵州省</option>
+                    <option>海南省</option>
+                    <option>河北省</option>
+                    <option>河南省</option>
+                    <option>黑龙江省</option>
+                    <option>湖北省</option>
+                    <option>湖南省</option>
+                    <option>吉林省</option>
+                    <option>江苏省</option>
+                    <option>江西省</option>
+                    <option>辽宁省</option>
+                    <option>内蒙古省</option>
+                    <option>青海省</option>
+                    <option>山东省</option>
+                    <option>山西省</option>
+                    <option>陕西省</option>
+                    <option>上海市</option>
+                    <option>四川省</option>
+                    <option>天津市</option>
+                    <option>西藏省</option>
+                    <option>新疆省</option>
+                    <option>云南省</option>
+                    <option>浙江省</option>
+                    <option selected>全部</option>
+                </select>
+            </div>
+            <label>货物类型：</label>
+            <div class="styled-select" style="width:120px;">
+                <select id="goodstype" name="goodstype">
+                    <option>机械设备</option>
+                    <option>家具</option>
+                    <option>食品</option>
+                    <option>生鲜</option>
+                    <option>家禽</option>
+                    <option>电子产品</option>
+                    <option>衣服视频</option>
+                    <option>其他</option>
+                    <option selected>全部</option>
+                </select>
+            </div>
+            <button id="serch" type="submit" >搜索</button>
+        </form>
+        <br />
+        <div>
+        
+        	<div>	<!--表头-->
+            	<table class="tableheader">
+                	<tr>
+                    	<td class="title1">货物类型</td>
+                        <td class="title2">货物名称</td>
+                        <td class="title3">重量</td>
+                        <td class="title4">出发地</td>
+                        <td class="title5">目的地</td>
+                        <td class="title6">发货时间</td>
+                    </tr>
+                </table>
+            </div>
+        
+        	<div align="center">
+            	<table class="result" onClick="document.getElementById('detaile1').style.display='block'">
+                	<tr>
+                        <td class="title1">宇神</td>
+                        <td class="title2">极品牌宇神</td>
+                        <td class="title3">1000</td>
+                        <td class="title4">河北省</td>
+                        <td class="title5">安徽省</td>
+                        <td class="title6">2018-1-15</td>
+                    </tr>
+                </table>
+                <div class="order_details_box" id="detaile1">
+                	<textarea class="order_details" name="order_details">
+                    </textarea><br />
+                    <button onclick="document.getElementById('detaile1').style.display='none'">收起</button>
+            		<button type="submit">申请订单</button>
                 </div>
-
-                <label>起始地：</label>
-                <div class="styled-select" style="width:120px;">
-                    <select id="startplace" name="startplace">
-                        <option value="">安徽省</option>
-                        <option value="0">北京市</option>
-                        <option value="0">重庆市</option>
-                        <option value="0">福建省</option>
-                        <option value="0">甘肃省</option>
-                        <option value="0">广东省</option>
-                        <option value="0">广西省</option>
-                        <option value="0">贵州省</option>
-                        <option value="0">海南省</option>
-                        <option value="河北省">河北省</option>
-                        <option value="0">河南省</option>
-                        <option value="0">黑龙江省</option>
-                        <option value="0">湖北省</option>
-                        <option value="0">湖南省</option>
-                        <option value="0">吉林省</option>
-                        <option value="0">江苏省</option>
-                        <option value="0">江西省</option>
-                        <option value="0">辽宁省</option>
-                        <option value="0">内蒙古省</option>
-                        <option>青海省</option>
-                        <option>山东省</option>
-                        <option>山西省</option>
-                        <option>陕西省</option>
-                        <option>上海市</option>
-                        <option>四川省</option>
-                        <option>天津市</option>
-                        <option>西藏省</option>
-                        <option>新疆省</option>
-                        <option>云南省</option>
-                        <option>浙江省</option>
-                        <option selected>全部</option>
-                    </select>
+            	<table class="result" onClick="document.getElementById('detaile2').style.display='block'">
+                	<tr>
+                        <td class="title1">宇神</td>
+                        <td class="title2">极品牌宇神</td>
+                        <td class="title3">1000</td>
+                        <td class="title4">河北省</td>
+                        <td class="title5">安徽省</td>
+                        <td class="title6">2018-1-15</td>
+                    </tr>
+                </table>
+                <div class="order_details_box" id="detaile2">
+                	<textarea class="order_details" name="order_details">
+                    </textarea><br />
+                    <button onclick="document.getElementById('detaile2').style.display='none'">收起</button>
+            		<button type="submit">申请订单</button>
                 </div>
-                <label>目的地：</label>
-                <div class="styled-select" style="width:120px;">
-                    <select id="destination" name="destination">
-                        <option>安徽省</option>
-                        <option>北京市</option>
-                        <option>重庆市</option>
-                        <option>福建省</option>
-                        <option>甘肃省</option>
-                        <option>广东省</option>
-                        <option>广西省</option>
-                        <option>贵州省</option>
-                        <option>海南省</option>
-                        <option value="河北省">河北省</option>
-                        <option>河南省</option>
-                        <option>黑龙江省</option>
-                        <option>湖北省</option>
-                        <option>湖南省</option>
-                        <option>吉林省</option>
-                        <option>江苏省</option>
-                        <option>江西省</option>
-                        <option>辽宁省</option>
-                        <option>内蒙古省</option>
-                        <option>青海省</option>
-                        <option>山东省</option>
-                        <option>山西省</option>
-                        <option>陕西省</option>
-                        <option>上海市</option>
-                        <option>四川省</option>
-                        <option>天津市</option>
-                        <option>西藏省</option>
-                        <option>新疆省</option>
-                        <option>云南省</option>
-                        <option>浙江省</option>
-                        <option selected value="ALL">全部</option>
-                    </select>
+            	<table class="result" onClick="document.getElementById('detaile3').style.display='block'">
+                	<tr>
+                        <td class="title1">宇神</td>
+                        <td class="title2">极品牌宇神</td>
+                        <td class="title3">1000</td>
+                        <td class="title4">河北省</td>
+                        <td class="title5">安徽省</td>
+                        <td class="title6">2018-1-15</td>
+                    </tr>
+                </table>
+                <div class="order_details_box" id="detaile3">
+                	<textarea class="order_details" name="order_details">
+                    </textarea><br />
+                    <button onclick="document.getElementById('detaile3').style.display='none'">收起</button>
+            		<button type="submit">申请订单</button>
                 </div>
-                <label>货物类型：</label>
-                <div class="styled-select" style="width:120px;">
-                    <select id="goodstype" name="goodstype">
-                        <option></option>
-                        <option value="1">大哥</option>
-                        <option value="2">婷婷</option>
-                        <option value="3">丁剑</option>
-                        <option value="4">宇神</option>
-                        <option selected>全部</option>
-                    </select>
+            	<table class="result" onClick="document.getElementById('detaile4').style.display='block'">
+                	<tr>
+                        <td class="title1">宇神</td>
+                        <td class="title2">极品牌宇神</td>
+                        <td class="title3">1000</td>
+                        <td class="title4">河北省</td>
+                        <td class="title5">安徽省</td>
+                        <td class="title6">2018-1-15</td>
+                    </tr>
+                </table>
+                <div class="order_details_box" id="detaile4">
+                	<textarea class="order_details" name="order_details">
+                    </textarea><br />
+                    <button onclick="document.getElementById('detaile4').style.display='none'">收起</button>
+            		<button type="submit">申请订单</button>
                 </div>
-                <button id="serch" type="submit" href="javascript:void(0);"  >搜索</button>
-            </form>
-            <br />
-            <div>
-
-                <div>	<!--表头-->
-                    <table class="tableheader">
-                        <tr>
-                            <td class="title1">货物类型</td>
-                            <td class="title2">货物名称</td>
-                            <td class="title3">重量</td>
-                            <td class="title4">出发地</td>
-                            <td class="title5">目的地</td>
-                            <td class="title6">发货时间</td>
-                        </tr>
-                    </table>
+            	<table class="result" onClick="document.getElementById('detaile5').style.display='block'">
+                	<tr>
+                        <td class="title1">宇神</td>
+                        <td class="title2">极品牌宇神</td>
+                        <td class="title3">1000</td>
+                        <td class="title4">河北省</td>
+                        <td class="title5">安徽省</td>
+                        <td class="title6">2018-1-15</td>
+                    </tr>
+                </table>
+                <div class="order_details_box" id="detaile5">
+                	<textarea class="order_details" name="order_details">
+                    </textarea><br />
+                    <button onclick="document.getElementById('detaile5').style.display='none'">收起</button>
+            		<button type="submit">申请订单</button>
                 </div>
-
-                <div align="center">
-                    <table class="result" >
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <table class="result" >
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <table class="result" >
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <table class="result" >
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <table class="result" >
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <table class="result" >
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <table class="result" >
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                </div>	<!--结果表结束-->
-
-                <ul class="pagination">
-                    <li><a href="">«</a></li>
-                    <li><a class="active" href="">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                    <li><a href="">6</a></li>
-                    <li><a href="">7</a></li>
-                    <li><a href="">»</a></li>
-                </ul>
-
-            </div>	<!--表和翻页结束-->
-
-            <br />
-
+            	<table class="result" onClick="document.getElementById('detaile6').style.display='block'">
+                	<tr>
+                        <td class="title1">宇神</td>
+                        <td class="title2">极品牌宇神</td>
+                        <td class="title3">1000</td>
+                        <td class="title4">河北省</td>
+                        <td class="title5">安徽省</td>
+                        <td class="title6">2018-1-15</td>
+                    </tr>
+                </table>
+                <div class="order_details_box" id="detaile6">
+                	<textarea class="order_details" name="order_details">
+                    </textarea><br />
+                    <button onclick="document.getElementById('detaile6').style.display='none'">收起</button>
+            		<button type="submit">申请订单</button>
+                </div>
+            	<table class="result" onClick="document.getElementById('detaile7').style.display='block'">
+                	<tr>
+                        <td class="title1">宇神</td>
+                        <td class="title2">极品牌宇神</td>
+                        <td class="title3">1000</td>
+                        <td class="title4">河北省</td>
+                        <td class="title5">安徽省</td>
+                        <td class="title6">2018-1-15</td>
+                    </tr>
+                </table>
+                <div class="order_details_box" id="detaile7">
+                	<textarea class="order_details" name="order_details">
+                    </textarea><br />
+                    <button onclick="document.getElementById('detaile7').style.display='none'">收起</button>
+            		<button type="submit">申请订单</button>
+                </div>
+            </div>	<!--结果表结束-->
+            
+        	<ul class="pagination">
+                <li><a href="">«</a></li>
+                <li><a class="active" href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">»</a></li>
+            </ul>
+            
+        </div>	<!--表和翻页结束-->
+        
+    	<br />
+        
         </div>	<!--表、翻页、搜索结束-->
-
+        
         <div class="aboutus" id="aboutus">
             <p><strong>关于我们：</strong>@傻敷敷小组<br />超凶的组长：李新宇</p>
             <p>帅气的后台：韩婷婷<br />美丽的后台：肖丁剑</p>
             <p>萌萌的前端：杨志坤<br />超好的前端：覃嘉俊</p>
         </div>
-
+        
     </div>	<!--article结束-->
-
+    
     <hr class="hr_style2" />
-
+    
     <div class="footer">2018 &copy; 傻敷敷小组</div>
-
+    
 </div>
-
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-
-<!-- BEGIN CORE PLUGINS -->
-
-<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
-
-<script src="media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-
-<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-
-<script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-
-<script src="media/js/bootstrap.min.js" type="text/javascript"></script>
-
-<!--[if lt IE 9]>
-
-<script src="media/js/excanvas.min.js"></script>
-
-<script src="media/js/respond.min.js"></script>
-
-<![endif]-->
-
-<script src="media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
-
-<script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>
-
-<script src="media/js/jquery.cookie.min.js" type="text/javascript"></script>
-
-<script src="media/js/jquery.uniform.min.js" type="text/javascript" ></script>
-
-<!-- END CORE PLUGINS -->
-
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-
-<script src="media/js/jquery.validate.min.js" type="text/javascript"></script>
-
-<!-- END PAGE LEVEL PLUGINS -->
-<script src="javascript/Goods_details.js" type="text/javascript"></script>
 
 </body>
 </html>
