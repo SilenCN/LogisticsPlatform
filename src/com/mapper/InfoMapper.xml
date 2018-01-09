@@ -16,7 +16,7 @@
     </update>
 
     <update id="updateCarInfo" keyProperty="id" parameterType="com.model.CarInfo">
-        UPDATE carInfo SET phone={#phone},carType={#carType},carNumber=#{carNumber},transportType=#{transportType} WHERE id=#{id}
+        UPDATE carInfo SET phone=#{phone},carType=#{carType},carNumber=#{carNumber},transportType=#{transportType} WHERE id=#{id}
     </update>
 
     <select id="getCarInfo" resultType="java.util.HashMap">

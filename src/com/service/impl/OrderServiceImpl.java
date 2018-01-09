@@ -34,9 +34,9 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public List<Map<String, Object>> getOrder(int status, int page) {
-        return orderDao.getOrder(status,page);
+        return orderDao.getOrder(status,(page-1)*7);
     }
 
     @Override
-    public List<Map<String , Object >>selectOrder(int page) { return orderDao.selectOrder(page); }
+    public List<Map<String , Object >>selectOrder(int page) { return orderDao.selectOrder((page-1)*7); }
 }

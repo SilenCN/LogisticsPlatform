@@ -12,11 +12,11 @@
     </select>
 
     <select id="queryById" resultType="com.model.Apply">
-        SELECT * FROM apply WHERE id={id}
+        SELECT * FROM apply WHERE id=#{id}
     </select>
 
     <select id="selectApplyCarInfo" resultType="java.util.HashMap">
-        SELECT id,orderId,carId,status,createTime, FROM apply WHERE  id={#id}
+        SELECT id,orderId,carId,status,createTime, FROM apply WHERE  id=#{id}
     </select>
 
     <select id="selectApplyCarInfoList" resultType="java.util.HashMap">
