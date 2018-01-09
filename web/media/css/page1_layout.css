@@ -1,0 +1,154 @@
+body {
+	background-color:#3D3D3D;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	position:float;
+}
+h1,label,button {
+	display:inline-block;
+	font-family:"微软雅黑";
+}
+button {
+	width:80px;
+	height:30px;
+	border-radius:5px;
+	border-style:solid;
+	border-width:2px;
+	background-color:#96B97D;
+	color:#FFFFFF;
+	text-decoration:none;
+    cursor:pointer;
+    transition-duration:0.3s;
+}
+button:hover {
+	background-color:#FFFFFF;
+	color:#9B9B9B;
+	font-weight:bolder;
+}
+select+label {
+	margin-left:100px;
+}
+select+button {
+	margin-left:100px;
+}
+table,tr,td {	/*表格、单元格*/
+	border-spacing:0;
+	font-size: 18px;
+	font-family:"微软雅黑"
+}
+.header {	/*头部*/
+    background-color:#96B97D;
+    color:white;
+	margin-top:20px;
+	text-align:left;
+	width:100%;
+    padding:5px;	 
+}
+.hr_style1 {
+	border-color:#F4F4F4;
+	border-width:1px;
+}
+.hr_style2{
+	border-width:10px;
+}
+.article {	/*网页主体*/
+	background-color: #F4F4F4;
+	width:1210px;
+}
+.footer {	/*网页尾部*/
+    background-color:#96B97D;
+    color:#FFFFFF;
+    clear:both;
+	width:100%;
+    text-align:center;
+    padding:5px;	 	 
+}
+.baseplate {	/*网页底板*/
+	display:inline-block;
+	width:1200px;
+	position:float;
+}
+.logo {	/*logo图标*/
+	 width:200px;
+	 margin-bottom:0;
+}
+.slash {
+	height:80px;
+}
+.webtitle {	/*网页大标题*/
+	float:right;
+	margin-right:250px;
+	letter-spacing:6px;
+}
+.topnav {	/*顶部横向导航栏*/
+  overflow: hidden;
+  background-color:#3D3D3D;
+}
+.topnav a {
+  float:left;
+  display:block;
+  color:#F4F4F4;
+  text-align:center;
+  padding:14px 16px;
+  text-decoration:none;
+  font-size:17px;
+}
+.topnav a:hover,.topnav a.active {
+  background-color:#FCFCFC;
+  color:black;
+  font-weight:bolder;
+}
+.photos {	/*存放滚动照片div*/
+	
+}
+.poster {	/*滚动照片*/
+	width:1200px;
+}
+.result {	/*搜索结果*/
+	height:60px;
+	width:80%;
+	background-color:#FFFFFF;
+	border:1px solid #96B97D;
+	margin:15px auto;
+	border-radius:10px;
+	border-left-width:15px;
+	box-shadow: 0 2px 2px #96B97D;
+}
+.result tr:hover {
+    background-color: #FCFCFC;
+    transition: all 0.1s ease-in-out;
+}
+.result td {
+    padding:10px;
+    text-align:left;
+}
+.result td:first-child {
+    border-right:1px solid #96B97D;
+	width:10%;
+}
+ul.pagination {	/*分页*/
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+ul.pagination li {
+	display: inline;
+}
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 3px 10px;
+	background-color:#FFFFFF;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid #dddddd;
+}
+ul.pagination li a.active {
+    background-color: #96B97D;
+    color: white;
+    border: 1px solid #96B97D;
+}
+ul.pagination li a:hover:not(.active) {
+	background-color: #dddddd;
+}

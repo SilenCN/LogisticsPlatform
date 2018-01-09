@@ -17,6 +17,7 @@ button {
 	border-width:2px;
 	background-color:#96B97D;
 	color:#FFFFFF;
+	margin-top:10px;
 	text-decoration:none;
     cursor:pointer;
     transition-duration:0.3s;
@@ -26,16 +27,28 @@ button:hover {
 	color:#9B9B9B;
 	font-weight:bolder;
 }
-div+label {
-	margin-left:20px;
-}
 select+button {
-	margin-right:20px;
+	margin-left:80px;
 }
 table,tr,td {	/*表格、单元格*/
 	border-spacing:0;
 	font-size: 18px;
 	font-family:"微软雅黑"
+}
+form label {
+	font-size:20px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+form button {
+	margin-top:20px;
+}
+textarea {
+	border-radius:8px;
+	border:1px solid #96B97D;
+	background-color:#FFFFFF;
+	font-size:20px;
+	text-align:center;
 }
 .header {	/*头部*/
     background-color:#F4F4F4;
@@ -139,6 +152,9 @@ table,tr,td {	/*表格、单元格*/
 	position:relative;
 	top:-200px;
 }
+.container3 {
+	display:inline-block;
+}
 .poster {	/*照片*/
 	width:1200px;
 	height:400px;
@@ -149,90 +165,15 @@ table,tr,td {	/*表格、单元格*/
 .zbfr {
 	float:right;
 }
-.resultstitle {
-	position:relative;
-	top:-25px;
-	background-color:#FFFFFF;
-	font-size:20px;
+.messagenum {
+	color:#96B97D;
 }
-.tableheader {
-	height:30px;
-	width:80%;
-	height:45px;
-	text-align:center;
+.amessage {
+	width:600px;
+	background-color:#FCFCFC;
 	border:1px solid #96B97D;
-	background-color:#96B97D;
-	color:#FFFFFF;
-	border-left:16px solid #96B97D;
-}
-.tableheader td {
-	border-left:1px solid #FFFFFF;
-}
-.tableheader .title1 {
-	border-left:none;
-}
-.result {	/*搜索结果*/
-	height:60px;
-	width:80%;
-	border:1px solid #96B97D;
-	margin:15px auto;
-	border-radius:10px 0 0 10px;
-	border-left-width:16px;
-	box-shadow: 0 0 5px #96B97D;
-}
-.result tr:hover {
-    background-color: #FCFCFC;
-	cursor:pointer;
-    transition: all 0.1s ease-in-out;
-}
-.result td {
-    padding:10px;
-    text-align:left;
-	border-right:1px solid #96B97D;
-	text-align:center;
-}
-.result td:first-child {
-    border-right:5px solid #96B97D;
-}
-.title1 {
-	width:14%;
-}
-.title2 {
-	width:20%;
-}
-.title3 {
-	width:12%;
-}
-.title4 {
-	width:15%;
-}
-.title5 {
-	width:15%;
-}
-ul.pagination {	/*分页*/
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-}
-ul.pagination li {
-	display: inline;
-}
-ul.pagination li a {
-    color: black;
-    float: left;
-    padding: 3px 10px;
-	background-color:#FFFFFF;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    border: 1px solid #dddddd;
-}
-ul.pagination li a.active {
-    background-color: #96B97D;
-    color: white;
-    border: 1px solid #96B97D;
-}
-ul.pagination li a:hover:not(.active) {
-	background-color: #dddddd;
+	border-left-width:15px;
+	padding:20px;
 }
 .aboutus {
 	position:relative;
@@ -248,23 +189,6 @@ ul.pagination li a:hover:not(.active) {
 	-webkit-column-count:3;
 	-webkit-column-gap:40px;
 	-webkit-column-rule-style:dotted;
-}
-.styled-select {
-	display:inline-block;
-	height: 34px;
-	overflow: hidden;
-	background: url('../../mmk_media/image/more_unfold.png') no-repeat right #FCFCFC;
-	border:1px solid #96B97D;
-	border-radius:8px;
-	vertical-align:top;
-}
-#goodstype,.weight,.senddate,#startplace,#destination {
-	background:transparent;
-	width:120px;
-	font-size:16px;
-	height:34px;
-	border:none;
-	-webkit-appearance:none; /*for chrome*/
 }
 .aboutus p{
 	padding:20px 16px;
