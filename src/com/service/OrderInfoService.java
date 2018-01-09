@@ -18,6 +18,8 @@ public interface OrderInfoService {
 
     /**
      * 获取所有订单详细信息
+     * @param page
+     * @return 所有订单的信息
      */
     List<Map<String , Object >> getOrderInfo(int page);
 

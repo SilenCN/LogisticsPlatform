@@ -1,14 +1,6 @@
 package com.model;
 
 public class OrderInfo extends Order {
-    private int type;
-    private String goods;
-    private Float weight;
-    private long deliveryTime;
-    private String departure;
-    private String target;
-    private String remark;
-
     /**
      * 货物类型，默认全部
      */
@@ -23,6 +15,14 @@ public class OrderInfo extends Order {
      * 目的地，默认全部
      */
     public static final String TARGET_ALL="ALL";
+
+    private int type=TYPE_OF_ALL;
+    private String goods;
+    private Float weight;
+    private long deliveryTime;
+    private String departure=DEPARTURE_ALL;
+    private String target=TARGET_ALL;
+    private String remark;
 
     public int getType() {
         return type;
