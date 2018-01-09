@@ -42,25 +42,35 @@ public class OrderInfoServiceImpl implements OrderInfoService {
      */
     public List<Map<String ,Object >> searchOrderInfo(int type, String departure, String target,int page){
         if(OrderInfo.TYPE_OF_ALL==type && !departure.equals(OrderInfo.DEPARTURE_ALL) && !target.equals(OrderInfo.TARGET_ALL)){
-            return orderInfoDao.selectOrderInfoExpType(departure , target , page );
+            System.out.println("查询1");
+            return orderInfoDao.selectOrderInfoExpType(departure , target , (page-1)*20 );
 
         }else if(OrderInfo.TYPE_OF_ALL!=type && departure.equals(OrderInfo.DEPARTURE_ALL) && !target.equals(OrderInfo.TARGET_ALL)){
-            return orderInfoDao.selectOrderInfoExpDeparture( type , target , page);
+            System.out.println("查询2");
+            return orderInfoDao.selectOrderInfoExpDeparture( type , target , (page-1)*20);
 
         }else if(OrderInfo.TYPE_OF_ALL!=type && !departure.equals(OrderInfo.DEPARTURE_ALL) && target.equals(OrderInfo.TARGET_ALL)){
-            return orderInfoDao.selectOrderInfoExpTarget( type ,departure , page);
+            System.out.println("查询3");
+            return orderInfoDao.selectOrderInfoExpTarget( type ,departure , (page-1)*20);
 
         }else if(OrderInfo.TYPE_OF_ALL==type && !departure.equals(OrderInfo.DEPARTURE_ALL) && target.equals(OrderInfo.TARGET_ALL)){
-            return orderInfoDao.selectOrderInfoByDeparture( departure , page);
+            System.out.println("查询4");
+            return orderInfoDao.selectOrderInfoByDeparture( departure , (page-1)*20);
 
         }else if(OrderInfo.TYPE_OF_ALL!=type && departure.equals(OrderInfo.DEPARTURE_ALL) && target.equals(OrderInfo.TARGET_ALL)){
-            return orderInfoDao.selectOrderInfoByType( type , page);
+            System.out.println("查询5");
+            return orderInfoDao.selectOrderInfoByType( type , (page-1)*20);
 
         }else if(OrderInfo.TYPE_OF_ALL==type && departure.equals(OrderInfo.DEPARTURE_ALL) && !target.equals(OrderInfo.TARGET_ALL)){
-            return orderInfoDao.selectOrderInfoByTarget( target , page);
+            System.out.println("查询6");
+            return orderInfoDao.selectOrderInfoByTarget( target , (page-1)*20);
         }
-
-        return orderInfoDao.selectOrderInfo(type, departure, target, page);
+        System.out.println("查询7");
+        System.out.println("type="+type);
+        System.out.println("de="+departure);
+        System.out.println("ta"+target);
+        System.out.println("page"+page);
+        return orderInfoDao.selectOrderInfo(type, departure, target, (page-1)*20);
     }
 
 }

@@ -232,3 +232,25 @@ ul.pagination li a:hover:not(.active) {
 .aboutus p{
 	padding:20px 16px;
 }
+.result {	/*搜索结果*/
+	height:60px;
+	width:90%;
+	border:1px solid #96B97D;
+	margin-top:10px;
+	margin-bottom:20px;
+	border-radius:10px;
+	border-left-width:16px;
+	box-shadow: 0 2px 2px #96B97D;
+}
+.result tr:hover {
+	background-color: #FCFCFC;
+	transition: all 0.1s ease-in-out;
+}
+.result td {
+	padding:10px;
+	text-align:left;
+}
+.result td:first-child {
+	border-right:1px solid #96B97D;
+	width:10%;
+}
