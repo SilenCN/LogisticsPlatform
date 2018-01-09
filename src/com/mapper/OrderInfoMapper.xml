@@ -5,42 +5,42 @@
 <mapper namespace="com.dao.OrderInfoDao">
 
     <insert id="insertOrderInfo"  useGeneratedKeys="true" keyProperty="id" parameterType="com.model.OrderInfo">
-        INSERT INTO orderInfo(id,type,goods,price,weight,depature,target,remark) VALUES(#{id},#{type},#{goods},#{price},#{weight},{#departure},{#target},{#remark})
+        INSERT INTO orderInfo(id,type,goods,price,weight,depature,target,remark) VALUES(#{id},#{type},#{goods},#{price},#{weight},#{departure},#{target},#{remark})
     </insert>
 
     <delete id="deleteOrderInfo" parameterType="com.model.OrderInfo">
-        DELETE FROM orderInfo WHERE id={#id}
+        DELETE FROM orderInfo WHERE id=#{id}
     </delete>
     <select id="getOrderInfo" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND orderInfo.deliveryTime > System.currentTimeMillis() ORDER  BY orders.createtime DESC  LIMIT ({#page}-1)*7+1,{#page}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id ORDER  BY orders.createtime DESC  LIMIT (#{start}-1)*7+1,#{start}*7
     </select>
 
     <select id="selectOrderInfo" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND departure like %#{departure}% AND target like %#{target}% AND orderInfo.deliveryTime > System.currentTimeMillis()ORDER  BY orders.createtime DESC LIMIT (#{page}-1)*7+1,#{page}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND departure like CONCAT('%','${departure}','%' ) AND target like CONCAT('%','${target}','%' ) ORDER  BY orders.createtime DESC LIMIT #{start},20
     </select>
 
     <select id="selectOrderInfoExpType" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND departure={#departure} AND target like %{#target}% AND orderInfo.deliveryTime > System.currentTimeMillis() ORDER  BY orders.createtime DESC LIMIT ({#page}-1)*7+1,{#page}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND departure=#{departure} AND target like %#{target}%  ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
     </select>
 
     <select id="selectOrderInfoExpDeparture" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type={#type} AND target like %{#target}% AND orderInfo.deliveryTime > System.currentTimeMillis()ORDER  BY orders.createtime DESC LIMIT ({#page}-1)*7+1,{#page}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND target like %#{target}% ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
     </select>
 
     <select id="selectOrderInfoExpTarget" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type={#type} AND departure like %{#departure}% AND orderInfo.deliveryTime > System.currentTimeMillis()ORDER  BY orders.createtime DESC LIMIT ({#page}-1)*7+1,{#page}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND departure like %#{departure}% ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
     </select>
 
     <select id="selectOrderInfoByTarget" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND target like %{#target}% AND orderInfo.deliveryTime > System.currentTimeMillis()ORDER  BY orders.createtime DESC LIMIT ({#page}-1)*7+1,{#page}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND target like %#{target}% ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
     </select>
 
     <select id="selectOrderInfoByType" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type={#type} AND orderInfo.deliveryTime > System.currentTimeMillis()ORDER  BY orders.createtime DESC LIMIT ({#page}-1)*7+1,{#page}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
     </select>
 
     <select id="selectOrderInfoByDeparture" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND departure like %{#departure}% AND orderInfo.deliveryTime > System.currentTimeMillis()ORDER  BY orders.createtime DESC LIMIT ({#page}-1)*7+1,{#page}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND departure like %#{departure}% ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
     </select>
 
 </mapper>
