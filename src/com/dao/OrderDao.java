@@ -1,6 +1,7 @@
 package com.dao;
 
 import com.model.Order;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public interface OrderDao {
     /**
      * 更新货物状态
      */
-    int updateOrder(int id, int status);
+    int updateOrder(@Param("id") int id,@Param("status") int status);
 
     /**
      * 将货物信息更新为已完成状态
@@ -30,10 +31,10 @@ public interface OrderDao {
     /**
      *获取某状态下的货物信息
      */
-    List<Map<String,Object>> getOrder(int status, int page);
+    List<Map<String,Object>> getOrder(@Param("status") int status, @Param("start") int start);
 
     /**
      * 获取货物的全部信息
      */
-    List<Map<String ,Object >> selectOrder(int page);
+    List<Map<String ,Object >> selectOrder(int start);
 }

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.OrderInfoDao">
 
-    <insert id="insertOrderInfo"  useGeneratedKeys="true" keyProperty="id" parameterType="com.model.OrderInfo">
+    <insert id="insertOrderInfo" useGeneratedKeys="true" keyProperty="id" parameterType="com.model.OrderInfo">
         INSERT INTO orderInfo(id,type,goods,price,weight,depature,target,remark) VALUES(#{id},#{type},#{goods},#{price},#{weight},#{departure},#{target},#{remark})
     </insert>
 
@@ -12,35 +12,35 @@
         DELETE FROM orderInfo WHERE id=#{id}
     </delete>
     <select id="getOrderInfo" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id ORDER  BY orders.createtime DESC  LIMIT (#{start}-1)*7+1,#{start}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id ORDER  BY orders.createtime DESC  #{start},7
     </select>
 
     <select id="selectOrderInfo" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND departure like CONCAT('%','${departure}','%' ) AND target like CONCAT('%','${target}','%' ) ORDER  BY orders.createtime DESC LIMIT #{start},20
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND departure like CONCAT('%','#{departure}','%' ) AND target like CONCAT('%','#{target}','%' ) ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoExpType" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND departure=#{departure} AND target like %#{target}%  ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND departure=#{departure} AND target like CONCAT('%','${target}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoExpDeparture" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND target like %#{target}% ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND target like CONCAT('%','#{target}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoExpTarget" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND departure like %#{departure}% ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND departure like CONCAT('%','#{departure}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoByTarget" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND target like %#{target}% ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND target like CONCAT('%','#{target}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoByType" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} ORDER  BY orders.createtime DESC LIMIT #{start}+1,7
     </select>
 
     <select id="selectOrderInfoByDeparture" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND departure like %#{departure}% ORDER  BY orders.createtime DESC LIMIT (#{start}-1)*7+1,#{start}*7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND departure like CONCAT('%','#{departure}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
 </mapper>
