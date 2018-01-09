@@ -5,15 +5,27 @@
 <mapper namespace="com.dao.OrderDao">
 
     <insert id="insertOrder" useGeneratedKeys="true" keyProperty="id" parameterType="com.model.Order">
-        INSERT INTO order(ownerId,status,createTime) VALUES(#{ownerId},#{status},#{createTime})
+        INSERT INTO orders(ownerId,status,createTime) VALUES(#{ownerId},#{status},#{createTime})
     </insert>
 
     <update id="updateOrder" keyProperty="id" parameterType="com.model.Order">
-        UPDATE order SET satatus={#status} WHERE id={#id}
+        UPDATE orders SET satatus={#status} WHERE id={#id}
     </update>
 
-    <select id="getOrder">
-        select *from orderInfo,order where order.id=orderInfo.id and order.status={#status}
+    <update id="updateOrderById" keyProperty="id" parameterType="com.model.Order">
+        UPDATE orders SET status=4 WHERE id={#id}
+    </update>
+
+    <delete id="deleteOrderInfo" parameterType="com.model.Order">
+        DELETE FROM orders WHERE id={#id}
+    </delete>
+
+    <select id="getOrder" resultType="com.model.Order">
+        SELECT orderInfo.type,orderInfo.goods,orderInfo.weight,orderInfo.deliveryTime,orderInfo.departure,orderInfo.target,orderInfo.remark FROM orderInfo,orders WHERE orders.id=orderInfo.id AND orders.status={#status} LIMIT ({#page}-1)*10+1,{#page}*10
+    </select>
+
+    <select id="selectOrder" resultType="com.model.Order">
+        SELECT orderInfo.* FROM orders,orderInfo WHERE orders.id=orderInfo.id LIMIT ({#page}-1)*10+1,{#page}*10
     </select>
 
 </mapper>
