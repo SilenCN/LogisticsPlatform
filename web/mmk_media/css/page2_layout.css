@@ -26,11 +26,11 @@ button:hover {
 	color:#9B9B9B;
 	font-weight:bolder;
 }
-div+label {
-	margin-left:20px;
+select+label {
+	margin-left:50px;
 }
 select+button {
-	margin-right:20px;
+	margin-left:50px;
 }
 table,tr,td {	/*表格、单元格*/
 	border-spacing:0;
@@ -130,6 +130,37 @@ table,tr,td {	/*表格、单元格*/
 	border:2px solid #FFFFFF;
 	border-radius:50%;
 }
+.submenu {	/*左侧子菜单*/
+	display:inline-block;
+	position:relative;
+	top:-200px;
+	float:left;
+	margin-left:9px;
+	border: 6px solid #F4F4F4;
+}
+.submenu ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.submenu a:link,.submenu a:visited {
+	display:block;
+	font-weight:bold;
+	color:#000000;
+	background-color:#FFFFFF;
+	width:120px;
+	text-align:center;
+	padding:13px 30px;
+	text-decoration:none;
+	text-transform:uppercase;
+	font-size:18px;
+	font-weight:lighter;
+}
+.submenu a:hover,.submenu a:active {
+	background-color:#96B97D;
+	color:#FFFFFF;
+	font-weight:bolder;
+}
 .container1 {
 	background-color:#FFFFFF;
 }
@@ -138,13 +169,16 @@ table,tr,td {	/*表格、单元格*/
 	background-color:#FFFFFF;
 	position:relative;
 	top:-200px;
+	left:98px;
 }
 .poster {	/*照片*/
 	width:1200px;
 	height:400px;
 }
 .zbfl {
-	float:left;
+	/*float:left;*/
+	position:relative;
+	left:-462px;
 }
 .zbfr {
 	float:right;
@@ -154,60 +188,6 @@ table,tr,td {	/*表格、单元格*/
 	top:-25px;
 	background-color:#FFFFFF;
 	font-size:20px;
-}
-.tableheader {
-	height:30px;
-	width:80%;
-	height:45px;
-	text-align:center;
-	border:1px solid #96B97D;
-	background-color:#96B97D;
-	color:#FFFFFF;
-	border-left:16px solid #96B97D;
-}
-.tableheader td {
-	border-left:1px solid #FFFFFF;
-}
-.tableheader .title1 {
-	border-left:none;
-}
-.result {	/*搜索结果*/
-	height:60px;
-	width:80%;
-	border:1px solid #96B97D;
-	margin:15px auto;
-	border-radius:10px 0 0 10px;
-	border-left-width:16px;
-	box-shadow: 0 0 5px #96B97D;
-}
-.result tr:hover {
-    background-color: #FCFCFC;
-	cursor:pointer;
-    transition: all 0.1s ease-in-out;
-}
-.result td {
-    padding:10px;
-    text-align:left;
-	border-right:1px solid #96B97D;
-	text-align:center;
-}
-.result td:first-child {
-    border-right:5px solid #96B97D;
-}
-.title1 {
-	width:14%;
-}
-.title2 {
-	width:20%;
-}
-.title3 {
-	width:12%;
-}
-.title4 {
-	width:15%;
-}
-.title5 {
-	width:15%;
 }
 ul.pagination {	/*分页*/
     display: inline-block;
@@ -248,23 +228,6 @@ ul.pagination li a:hover:not(.active) {
 	-webkit-column-count:3;
 	-webkit-column-gap:40px;
 	-webkit-column-rule-style:dotted;
-}
-.styled-select {
-	display:inline-block;
-	height: 34px;
-	overflow: hidden;
-	background: url('../../mmk_media/image/more_unfold.png') no-repeat right #FCFCFC;
-	border:1px solid #96B97D;
-	border-radius:8px;
-	vertical-align:top;
-}
-#goodstype,.weight,.senddate,#startplace,#destination {
-	background:transparent;
-	width:120px;
-	font-size:16px;
-	height:34px;
-	border:none;
-	-webkit-appearance:none; /*for chrome*/
 }
 .aboutus p{
 	padding:20px 16px;
