@@ -10,6 +10,10 @@ function checkName() {
         alert("请输入用户名");
         return false;
     }
+    if(name.length<6||name.length>18){
+        alert("用户名必须由6~18位字母或数字组成");
+        return false;
+    }
     return true;
 }
 
@@ -17,6 +21,9 @@ function checkPassword() {
     if (null == password || password == "") {
         alert("请输入密码");
         return false;
+    }
+    if(password.length>20||!(password.search(/^[a-zA-Z0-9]+$/g) != -1)){
+        alert("密码必须由字母和数字混合组成，且位数不得超过二十");
     }
     return reCheckPassword();
 }
