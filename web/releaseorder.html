@@ -72,12 +72,12 @@
                     </select>
                 </div><br /><br />
                 <label>货物名称：</label>
-                <input class="weight" type="text" /><br /><br />
+                <input id="name"  class="weight" type="text" /><br /><br />
                 <label>货物重量：</label>
-                <input class="weight" type="text" /><label style="margin-left:5px;">kg</label><br /><br />
+                <input id="weight" class="weight" type="text" /><label style="margin-left:5px;">kg</label><br /><br />
                 <label>发货时间：</label>
                 <div class="styled-select" style="width:170px;">
-                	<input class="senddate" type="date" />
+                	<input id="deliveryTime" class="senddate" type="date"  />
                 </div><br /><br />
                 <label>发货地址：</label>
                 <div class="styled-select" style="width:170px;">
@@ -88,7 +88,7 @@
                         <option value="福建省">福建省</option>
                         <option value="甘肃省">甘肃省</option>
                         <option value="广东省">广东省</option>
-                        <option value="广东省">广西省</option>
+                        <option value="广西">广西</option>
                         <option value="贵州省">贵州省</option>
                         <option value="海南省">海南省</option>
                         <option value="河北省">河北省</option>
@@ -100,7 +100,7 @@
                         <option value="江苏省">江苏省</option>
                         <option value="江西省">江西省</option>
                         <option value="辽宁省">辽宁省</option>
-                        <option value="内蒙古省">内蒙古省</option>
+                        <option value="内蒙古">内蒙古</option>
                         <option value="青海省">青海省</option>
                         <option value="山东省">山东省</option>
                         <option value="山西省">山西省</option>
@@ -108,8 +108,8 @@
                         <option value="上海省">上海市</option>
                         <option value="四川省">四川省</option>
                         <option value="天津市">天津市</option>
-                        <option value="西藏省">西藏省</option>
-                        <option value="新疆省">新疆省</option>
+                        <option value="西藏">西藏</option>
+                        <option value="新疆">新疆</option>
                         <option value="云南省">云南省</option>
                         <option value="浙江省">浙江省</option>
                     </select>
@@ -126,7 +126,7 @@
                         <option value="福建省">福建省</option>
                         <option value="甘肃省">甘肃省</option>
                         <option value="广东省">广东省</option>
-                        <option value="广东省">广西省</option>
+                        <option value="广西">广西</option>
                         <option value="贵州省">贵州省</option>
                         <option value="海南省">海南省</option>
                         <option value="河北省">河北省</option>
@@ -138,7 +138,7 @@
                         <option value="江苏省">江苏省</option>
                         <option value="江西省">江西省</option>
                         <option value="辽宁省">辽宁省</option>
-                        <option value="内蒙古省">内蒙古省</option>
+                        <option value="内蒙古">内蒙古</option>
                         <option value="青海省">青海省</option>
                         <option value="山东省">山东省</option>
                         <option value="山西省">山西省</option>
@@ -146,8 +146,8 @@
                         <option value="上海省">上海市</option>
                         <option value="四川省">四川省</option>
                         <option value="天津市">天津市</option>
-                        <option value="西藏省">西藏省</option>
-                        <option value="新疆省">新疆省</option>
+                        <option value="西藏">西藏</option>
+                        <option value="新疆">新疆</option>
                         <option value="云南省">云南省</option>
                         <option value="浙江省">浙江省</option>
                     </select>
@@ -156,7 +156,7 @@
                 <textarea rows="3" cols="60" placeholder="...详细地址..." style="resize:none;margin-top:15px;"></textarea><br />
                 <label>备注：</label><br />
                 <textarea rows="5" cols="60" style="resize:none"></textarea><br />
-                <button style="margin-left:200px;">确定发布</button>
+                <button id ="release" href="javascript:void(0);" style="margin-left:200px;">确定发布</button>
             </div>
                 
         </form><br />
@@ -212,12 +212,7 @@
 
 <!-- END PAGE LEVEL PLUGINS -->
 
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-
-<script src="media/js/app.js" type="text/javascript"></script>
-
-<script src="media/js/login.js" type="text/javascript"></script>
-
+<script src="javascript/release.js" type="text/javascript"></script>
 
 </body>
 </html>
