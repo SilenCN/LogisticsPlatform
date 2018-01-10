@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>物流运输平台——发布订单</title>
+<link href="mmk_media/css/releaseorder_layout.css" rel="stylesheet" type="text/css" />
+<script>
+	function hintInfo_exit() {
+		confirm("提示：您已成功退出账号！");
+	}
+</script>
+</head>
+
+<body>
+<div class="baseplate" align="center">
+
+    <div class="header">
+        <img class="logo" src="mmk_media/image/logo_big_touming.png" alt="logo" /> 
+        <img class="slash" src="mmk_media/image/slash.png" alt="" />
+        <img class="webtitle" src="mmk_media/image/title2.png" alt="">
+    </div>
+
+    <div class="article">
+    
+    	<hr class="hr_style1"/>
+        
+    	<div class="topnav">
+            <a class="menu" href="home.html">主页</a>
+            <a class="menu" href="myorders.html">我的订单</a>
+            <a class="menu active" href="releaseorders.html">发布订单</a>
+            <a class="menu" href="#aboutus">关于我们</a>
+            <a class="exit" href="Login.html" onclick="hintInfo_exit()">退出账号</a>
+            <a href="personalcenter.html">
+            	<img class="personalcenter" src="mmk_media/image/personalcenter.png" alt="个人中心"  />
+            </a>
+            <a href="messages.html">
+            	<img class="message" src="mmk_media/image/message.png" alt="信息" />
+            </a>
+        </div>
+        
+        <div class="container1">
+            <div class="photos">
+            <img class="poster" src="mmk_media/image/poster3.jpg" alt="" />
+            </div>
+        </div>
+        
+        <div class="container2" style="width:1000px;">
+        
+        <form action="">
+        
+        	<img class="zbfl" src="mmk_media/image/zbfl.png" alt="" />
+            <img class="zbfr" src="mmk_media/image/zbfr.png" alt="" />	<br />	<br />	<br />
+            
+            <div id="noconfirmation" style="width:80%">
+            	<hr class="hr_style3" />
+            	<label class="resultstitle">发布订单</label><br />
+            </div>
+            
+            <div class="container3" align="left">
+                <label>货物类型：</label>
+                <div class="styled-select" style="width:170px;">
+                    <select id="goodstype" name="goodstype">
+                        <option value="1" selected>机械设备</option>
+                        <option value="2">家具</option>
+                        <option value="3">食品</option>
+                        <option value="4">生鲜</option>
+                        <option value="5">家禽</option>
+                        <option value="6">电子产品</option>
+                        <option value="7">衣服饰品</option>
+                        <option value="8">其他</option>
+                    </select>
+                </div><br /><br />
+                <label>货物名称：</label>
+                <input class="weight" type="text" /><br /><br />
+                <label>货物重量：</label>
+                <input class="weight" type="text" /><label style="margin-left:5px;">kg</label><br /><br />
+                <label>发货时间：</label>
+                <div class="styled-select" style="width:170px;">
+                	<input class="senddate" type="date" />
+                </div><br /><br />
+                <label>发货地址：</label>
+                <div class="styled-select" style="width:170px;">
+                    <select id="startplace" name="startplace">
+                        <option value="安徽省" selected>安徽省</option>
+                        <option value="北京市">北京市</option>
+                        <option value="重庆市">重庆市</option>
+                        <option value="福建省">福建省</option>
+                        <option value="甘肃省">甘肃省</option>
+                        <option value="广东省">广东省</option>
+                        <option value="广东省">广西省</option>
+                        <option value="贵州省">贵州省</option>
+                        <option value="海南省">海南省</option>
+                        <option value="河北省">河北省</option>
+                        <option value="河南省">河南省</option>
+                        <option value="黑龙江省">黑龙江省</option>
+                        <option value="湖北省">湖北省</option>
+                        <option value="湖南省">湖南省</option>
+                        <option value="吉林省">吉林省</option>
+                        <option value="江苏省">江苏省</option>
+                        <option value="江西省">江西省</option>
+                        <option value="辽宁省">辽宁省</option>
+                        <option value="内蒙古省">内蒙古省</option>
+                        <option value="青海省">青海省</option>
+                        <option value="山东省">山东省</option>
+                        <option value="山西省">山西省</option>
+                        <option value="陕西省">陕西省</option>
+                        <option value="上海省">上海市</option>
+                        <option value="四川省">四川省</option>
+                        <option value="天津市">天津市</option>
+                        <option value="西藏省">西藏省</option>
+                        <option value="新疆省">新疆省</option>
+                        <option value="云南省">云南省</option>
+                        <option value="浙江省">浙江省</option>
+                    </select>
+                </div>
+                <label>省</label><br />
+                <textarea rows="3" cols="60" placeholder="...详细地址..." style="resize:none;margin-top:15px;"></textarea><br />
+                <input type="checkbox" ><label>选择常用发货地址</label><br /><br />
+                <label>收货地址：</label>
+                <div class="styled-select" style="width:170px;">
+                    <select id="destination" name="destination">
+                        <option value="安徽省" selected>安徽省</option>
+                        <option value="北京市">北京市</option>
+                        <option value="重庆市">重庆市</option>
+                        <option value="福建省">福建省</option>
+                        <option value="甘肃省">甘肃省</option>
+                        <option value="广东省">广东省</option>
+                        <option value="广东省">广西省</option>
+                        <option value="贵州省">贵州省</option>
+                        <option value="海南省">海南省</option>
+                        <option value="河北省">河北省</option>
+                        <option value="河南省">河南省</option>
+                        <option value="黑龙江省">黑龙江省</option>
+                        <option value="湖北省">湖北省</option>
+                        <option value="湖南省">湖南省</option>
+                        <option value="吉林省">吉林省</option>
+                        <option value="江苏省">江苏省</option>
+                        <option value="江西省">江西省</option>
+                        <option value="辽宁省">辽宁省</option>
+                        <option value="内蒙古省">内蒙古省</option>
+                        <option value="青海省">青海省</option>
+                        <option value="山东省">山东省</option>
+                        <option value="山西省">山西省</option>
+                        <option value="陕西省">陕西省</option>
+                        <option value="上海省">上海市</option>
+                        <option value="四川省">四川省</option>
+                        <option value="天津市">天津市</option>
+                        <option value="西藏省">西藏省</option>
+                        <option value="新疆省">新疆省</option>
+                        <option value="云南省">云南省</option>
+                        <option value="浙江省">浙江省</option>
+                    </select>
+                </div>
+                <label>省</label><br />
+                <textarea rows="3" cols="60" placeholder="...详细地址..." style="resize:none;margin-top:15px;"></textarea><br />
+                <label>备注：</label><br />
+                <textarea rows="5" cols="60" style="resize:none"></textarea><br />
+                <button style="margin-left:200px;">确定发布</button>
+            </div>
+                
+        </form><br />
+        
+        </div>
+        
+        <div class="aboutus" id="aboutus">
+            <p><strong>关于我们：</strong>@傻敷敷小组<br />超凶的组长：李新宇</p>
+            <p>帅气的后台：韩婷婷<br />美丽的后台：肖丁剑</p>
+            <p>萌萌的前端：杨志坤<br />超好的前端：覃嘉俊</p>
+        </div>
+        
+    </div>	<!--article结束-->
+    
+    <hr class="hr_style2" />
+    
+    <div class="footer">2018 &copy; 傻敷敷小组</div>
+    
+</div>
+
+</body>
+</html>
