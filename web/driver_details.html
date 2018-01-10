@@ -54,7 +54,7 @@
 
     <!-- BEGIN LOGIN FORM -->
 
-    <form class="form-vertical login-form" action="/" onsubmit="return false;">
+    <form class="form-vertical login-form" action="index.html">
 
         <h3 class="form-title">请完善您的个人信息</h3>
 
@@ -76,7 +76,7 @@
 
                     <i class="icon-user"></i>
 
-                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的联系电话" id="driver_details_phone_id" name="phone"/>
+                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的联系电话" name="phone"/>
 
                 </div>
 
@@ -100,7 +100,7 @@
 
                         <i class="icon-user"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="车牌号" name="CarNumber" id="driver_details_carnumber_id"/>
+                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="车牌号" name="CarNumber"/>
 
                     </div>
 
@@ -112,8 +112,8 @@
         <div class="control-group">
             <label class="control-label"></label>
             <div class="controls">
-                <select name="car" id="car_list_id" class="span6" style="width: 200px">
-                    <option value="0">请选择车型</option>
+                <select name="car" id="car_list" class="span6" style="width: 200px">
+                    <option value="">请选择车型</option>
                     <option value="1">小型货车</option>
                     <option value="2">中型货车</option>
                     <option value="3">大型货车</option>
@@ -124,8 +124,8 @@
         <div class="control-group">
             <label class="control-label"></label>
             <div class="controls">
-                <select name="goods" id="goods_list_id" class="span6" style="width: 200px">
-                    <option value="0">请选择承运货物类型</option>
+                <select name="goods" id="goods_list" class="span6" style="width: 200px">
+                    <option value="">请选择承运货物类型</option>
                     <option value="1">生鲜</option>
                     <option value="2">化学物品</option>
                     <option value="3">易燃易爆物品</option>
@@ -140,7 +140,7 @@
 
             </button>
 
-            <button type="submit" id="driver-details-submit-button" href="javascript:void(0);" class="btn green pull-right">
+            <button type="submit" class="btn green pull-right">
 
                 登陆 <i class="m-icon-swapright m-icon-white"></i>
 
@@ -154,39 +154,6 @@
 
 
 </div>
-<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
-
-<script src="media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-
-<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-
-<script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-
-<script src="media/js/bootstrap.min.js" type="text/javascript"></script>
-
-<!--[if lt IE 9]>
-
-<script src="media/js/excanvas.min.js"></script>
-
-<script src="media/js/respond.min.js"></script>
-
-<![endif]-->
-
-<script src="media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
-
-<script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>
-
-<script src="media/js/jquery.cookie.min.js" type="text/javascript"></script>
-
-<script src="media/js/jquery.uniform.min.js" type="text/javascript"></script>
-
-<!-- END CORE PLUGINS -->
-
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-
-<script src="media/js/jquery.validate.min.js" type="text/javascript"></script>
-<script src="javascript/driver_details.js" type="text/javascript"></script>
-
 
 <!-- END LOGIN -->
 </body>
