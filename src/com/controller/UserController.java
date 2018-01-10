@@ -32,6 +32,7 @@ public class UserController {
             map.put("reason", "验证码错误");
         } else {
             int id = userService.addUser(user);
+            System.out.println(id);
             if (id == -1) {
                 map.put("reason", "用户名已存在");
             } else {

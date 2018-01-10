@@ -23,7 +23,8 @@ public class UserServiceImpl implements UserService {
 
                 if (null==temp){
                     user.setCreateTime(System.currentTimeMillis());
-                   return userDao.create(user);
+                    userDao.create(user);
+                   return user.getId();
                 }
             }
         }
