@@ -24,6 +24,7 @@ public class OrderInfo extends Order {
     private String target=TARGET_ALL;
     private String remark;
 
+
     public int getType() {
         return type;
     }
@@ -77,4 +78,6 @@ public class OrderInfo extends Order {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+
 }
