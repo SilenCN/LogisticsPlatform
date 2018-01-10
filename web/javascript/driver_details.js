@@ -58,7 +58,7 @@ function postData() {
             console.log(data);
             //  var obj=JSON.parse(data);
             if (data.toString() == "true") {
-                window.location.href = "page1.html";
+                window.location.href = "home.html";
             } else {
                 alert("完善信息出错");
             }
