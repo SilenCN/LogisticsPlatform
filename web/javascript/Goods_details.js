@@ -19,11 +19,11 @@ function checkTarget() {
     return false;
 }
 function checkType() {
-    if(!=type ){
+   // if(1!=type ){
         return true;
-    }
-    alert("请选择货物类型");
-    return false;
+   // }
+   // alert("请选择货物类型");
+  //  return false;
 }
 <!-- 提交搜索条件 -->
 function submit() {
@@ -71,7 +71,6 @@ function submit() {
 
 $(function () {
     //提交注册
-
     alert("x");
     $('#serch').bind("click", function () {
         //防止重复提交
