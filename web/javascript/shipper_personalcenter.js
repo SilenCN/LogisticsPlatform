@@ -63,13 +63,14 @@ function submit() {
         $.ajax({
             type: 'POST',
             url: '/info/updateInOwner',
-            data: 'phone=' + phone+'&password='+password+'&address='+address+'&goods='+goods,
+            data: 'phone=' + phone+'&address='+address+'&goods='+goods,
             async: false,
             success: function (data) {
-                if (data.result=="true"){
+                alert(data);
+                if (data.toString()=="true"){
                     window.location.href = "home.jsp";
                 }else{
-                    alert(data.reason.toString());
+                    alert("failed");
                 }
             }
         });
