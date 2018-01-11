@@ -37,4 +37,7 @@ public interface OrderDao {
      * 获取货物的全部信息
      */
     List<Map<String ,Object >> selectOrder(int start);
+
+    List<Map<String,Object>> selectOrderInfoByCarId(@Param("carId") int carId,@Param("status") int status);
+    List<Map<String,Object>> selectOrderInfoByOwnerId(@Param("ownerId") int ownerId,@Param("status") int status);
 }

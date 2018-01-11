@@ -27,11 +27,11 @@
         
     	<div class="topnav">
             <a class="menu" href="home.html">主页</a>
-            <a class="menu" href="myorders.html">我的订单</a>
-            <a class="menu active" href="releaseorder.html">发布订单</a>
+            <a class="menu" href="javascript:redictMyOrder()">我的订单</a>
+            <a class="menu active" href="javascript:redictReleaseOrder()">发布订单</a>
             <a class="menu" href="#aboutus">关于我们</a>
-            <a class="exit" href="Login.html" onclick="hintInfo_exit()">退出账号</a>
-            <a href="personalcenter.html">
+            <a class="exit" href="javascript:exitLogin();">退出账号</a>
+            <a href="javascript:redictPersonInfo()">
             	<img class="personalcenter" src="mmk_media/image/personalcenter.png" alt="个人中心"  />
             </a>
             <a href="messages.html">
@@ -47,7 +47,7 @@
         
         <div class="container2" style="width:1000px;">
         
-        <form action="">
+        <form action="/" onsubmit="return false;">
         
         	<img class="zbfl" src="mmk_media/image/zbfl.png" alt="" />
             <img class="zbfr" src="mmk_media/image/zbfr.png" alt="" />	<br />	<br />	<br />
@@ -156,7 +156,7 @@
                 <textarea rows="3" cols="60" placeholder="...详细地址..." style="resize:none;margin-top:15px;"></textarea><br />
                 <label>备注：</label><br/>
                 <textarea rows="5" cols="60" style="resize:none"></textarea><br />
-                <button style="margin-left:200px;">确定发布</button>
+                <button style="margin-left:200px;" id="release_order_button">确定发布</button>
             </div>
                 
         </form><br />
@@ -214,9 +214,10 @@
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 
-<script src="media/js/app.js" type="text/javascript"></script>
 
-<script src="media/js/login.js" type="text/javascript"></script>
+<script src="javascript/CookieUtils.js" type="text/javascript"></script>
+<script src="javascript/common_utils.js" type="text/javascript"></script>
+<script src="javascript/release.js" type="text/javascript"></script>
 
 
 </body>

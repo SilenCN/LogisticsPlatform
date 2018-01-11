@@ -32,7 +32,7 @@ public class ApplyServiceImpl implements ApplyService {
         if (!(applyDao.updateApplyStatusById(id) > 0)){
             return false;
         }
-        return orderService.updateOrder(applyDao.queryById(id).getId(), Order.STATUS_IN_TRANSIT);
+        return orderService.updateOrder(applyDao.IdtoorderId(id), Order.STATUS_IN_TRANSIT);
     }
 
     @Override
@@ -55,7 +55,8 @@ public class ApplyServiceImpl implements ApplyService {
     }
 
     @Override
-    public Map<String,Object> getApplyInfo(int id){
-        return applyDao.selectApplyInfo(id);
+    public Map<String, Object> getApplyInfo(int id) {
+        return applyDao.selectAppliInfo(id);
     }
+
 }

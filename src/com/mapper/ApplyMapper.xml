@@ -11,12 +11,8 @@
         SELECT * FROM apply WHERE orderId=#{orderId} AND carId=#{carId}
     </select>
 
-    <select id="queryById" resultType="com.model.Apply">
-        SELECT * FROM apply WHERE id=#{id}
-    </select>
-
     <select id="selectApplyCarInfo" resultType="java.util.HashMap">
-        SELECT id,orderId,carId,status,createTime, FROM apply WHERE  id=#{id}
+        SELECT id,orderId,carId,status,createTime FROM apply WHERE  id=#{id}
     </select>
 
     <select id="selectApplyCarInfoList" resultType="java.util.HashMap">
@@ -31,8 +27,9 @@
         UPDATE apply SET status=true WHERE orderId=#{orderId} AND carId=#{carId}
     </update>
 
-    <select id="applyGetOrderID" resultType="com.model.Apply">
-            select * from apply where id=#{id}
+   <select id="IdtoorderId">
+            select orderId from orders,apply where orders.id=apply.orderId and apply.id={#id}
     </select>
+
 
 </mapper>
