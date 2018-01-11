@@ -42,20 +42,20 @@ function checkType() {
 
 //重量是否填写
 function checkWeight() {
-    if(0!=weight ){
+    if(weight >=0){
         return true;
     }
     alert("填写货物重量");
     return false;
 }
 
-function checkDeliveryTime() {
-    if(0!=deliveryTime){
+/*function checkDeliveryTime() {
+    if(deliveryTime>0){
         return true;
     }
     alert("请输入发货时间");
     return false;
-}
+}*/
 
 <!-- 提交搜索条件 -->
 function submit() {
@@ -86,7 +86,8 @@ function submit() {
     alert(weight);*/
     // alert(orderinfo.departure);
 
-    if (checkDeparture() && checkTarget() && checkType() && checkGoods() && checkWeight() && checkDeliveryTime()) {
+    if (checkDeparture() && checkTarget() && checkType() && checkGoods() && checkWeight()) {
+        alert("2");
         release();
     }
     return false;
@@ -118,7 +119,7 @@ $(function () {
         //防止重复提交
         //submitBtnAvailability('disable');
 //    	setTimeout(function(){
-        alert("y");
+        alert("zz");
         submit();
 //        }, 300);
     });
