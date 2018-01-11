@@ -39,4 +39,14 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public List<Map<String , Object >>selectOrder(int page) { return orderDao.selectOrder((page-1)*7); }
+
+    @Override
+    public List<Map<String, Object>> getOrderInfoByCarId(int carId, int status) {
+        return orderDao.selectOrderInfoByCarId(carId,status);
+    }
+
+    @Override
+    public List<Map<String, Object>> getOrderInfoByOwnerId(int ownerId, int status) {
+        return orderDao.selectOrderInfoByOwnerId(ownerId,status);
+    }
 }

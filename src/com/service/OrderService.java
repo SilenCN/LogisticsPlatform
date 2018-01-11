@@ -18,4 +18,7 @@ public interface OrderService {
     List<Map<String,Object>> getOrder(int status, int page);
 
     List<Map<String ,Object >> selectOrder(int page);
+
+    List<Map<String,Object>> getOrderInfoByCarId(int carId,int status);
+    List<Map<String,Object>> getOrderInfoByOwnerId(int ownerId,int status);
 }

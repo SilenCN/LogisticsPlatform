@@ -3,6 +3,7 @@ package com.controller;
 import com.model.Order;
 import com.service.OrderService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -19,28 +20,52 @@ public class OrderController {
 
     @ResponseBody
     @RequestMapping("/updateOrder")
-    public String updateOrder(int id,int status){ return orderService.updateOrder(id,status)+"";}
+    public String updateOrder(int id, int status) {
+        return orderService.updateOrder(id, status) + "";
+    }
 
     @ResponseBody
     @RequestMapping("/updateOrderById")
-    public String updateOrderById( int id ){ return orderService.updateOrderById( id )+""; }
+    public String updateOrderById(int id) {
+        return orderService.updateOrderById(id) + "";
+    }
 
     @ResponseBody
     @RequestMapping("/deleteOrder")
-    public String deleteOrder( int id ) { return orderService.deleteOrder( id ) +""; }
+    public String deleteOrder(int id) {
+        return orderService.deleteOrder(id) + "";
+    }
 
     @ResponseBody
     @RequestMapping("/insertOrder")
-    public String insertOrder(Order order){return orderService.insertOrder(order)+"";}
+    public String insertOrder(Order order) {
+        return orderService.insertOrder(order) + "";
+    }
 
     @ResponseBody
     @RequestMapping("/getOrder")
-    public List<Map<String,Object>> getOrder(int status,int page){
-        return orderService.getOrder(status,page);
+    public List<Map<String, Object>> getOrder(int status, int page) {
+        return orderService.getOrder(status, page);
     }
 
     @ResponseBody
     @RequestMapping("/selectOrder")
-    public List<Map<String , Object >> selectOrder(int page){ return orderService.selectOrder(page); }
+    public List<Map<String, Object>> selectOrder(int page) {
+        return orderService.selectOrder(page);
+    }
+
+
+    @RequestMapping("/getCarOrder")
+    @ResponseBody
+    public List<Map<String, Object>> getCarOrder(int carId, int status) {
+        return orderService.getOrderInfoByCarId(carId, status);
+    }
+
+
+    @RequestMapping("/getOwnerOrder")
+    @ResponseBody
+    public List<Map<String, Object>> getOwnerOrder(int ownerId, int status) {
+        return orderService.getOrderInfoByOwnerId(ownerId, status);
+    }
 
 }
