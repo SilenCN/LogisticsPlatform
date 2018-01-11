@@ -12,10 +12,9 @@ h1,label,button {
 button {
 	width:90px;
 	height:37px;
-	border-radius:10px;
 	border-style:solid;
-	border-width:2px;
-	background-color:#96B97D;
+	border-width:1px;
+	background-color:#6AAC15;
 	color:#FFFFFF;
 	text-decoration:none;
     cursor:pointer;
@@ -62,7 +61,7 @@ div.panel {
 }
 .hr_style3 {
 	border-style:dotted;
-	border-color:#96B97D;
+	border-color:#6AAC15;
 }
 .article {	/*网页主体*/
 	background-color:#FCFCFC;
@@ -122,8 +121,9 @@ div.panel {
 	margin-top:5px;
 }
 .topnav .menu:hover,.topnav a.active {
-	background-color:#96B97D;
+	background-color:#f4f4f4;
 	font-weight:bolder;
+	color:#000000;
 }
 .personalcenter,.message {
 	width:40px;
@@ -139,14 +139,12 @@ div.panel {
 	background-color:#FFFFFF;
 }
 .container2 {
-	border-color:#96B97D;
+	border-color:#6AAC15;
 	background-color:#FFFFFF;
-	position:relative;
-	top:-200px;
 }
 .poster {	/*照片*/
 	width:1200px;
-	height:400px;
+	height:200px;
 }
 .zbfl {
 	float:left;
@@ -165,10 +163,10 @@ div.panel {
 	width:80%;
 	height:45px;
 	text-align:center;
-	border:1px solid #96B97D;
-	background-color:#96B97D;
+	border:1px solid #6AAC15;
+	background-color:#6AAC15;
 	color:#FFFFFF;
-	border-left:16px solid #96B97D;
+	border-left:16px solid #6AAC15;
 }
 .tableheader td {
 	border-left:1px solid #FFFFFF;
@@ -179,11 +177,10 @@ div.panel {
 .result {	/*搜索结果*/
 	height:60px;
 	width:80%;
-	border:1px solid #96B97D;
+	border:1px solid #6AAC15;
 	margin:15px auto;
-	border-radius:10px 0 0 10px;
 	border-left-width:16px;
-	box-shadow: 0 0 5px #96B97D;
+	box-shadow: 0 0 5px #6AAC15;
 }
 .result tr:hover {
     background-color: #FCFCFC;
@@ -193,11 +190,11 @@ div.panel {
 .result td {
     padding:10px;
     text-align:left;
-	border-right:1px solid #96B97D;
+	border-right:1px solid #6AAC15;
 	text-align:center;
 }
 .result td:first-child {
-    border-right:5px solid #96B97D;
+    border-right:5px solid #6AAC15;
 }
 .title1 {
 	width:14%;
@@ -218,7 +215,7 @@ div.panel {
 	display:none;
 }
 .details {
-	border:1px solid #96B97D;
+	border:1px solid #6AAC15;
 	width:80%;
 }
 ul.pagination {	/*分页*/
@@ -239,16 +236,14 @@ ul.pagination li a {
     border: 1px solid #dddddd;
 }
 ul.pagination li a.active {
-    background-color: #96B97D;
+    background-color: #6AAC15;
     color: white;
-    border: 1px solid #96B97D;
+    border: 1px solid #6AAC15;
 }
 ul.pagination li a:hover:not(.active) {
 	background-color: #dddddd;
 }
 .aboutus {
-	position:relative;
-	top:-150px;
 	column-count:3;
 	column-gap:40px;
 	column-rule-style:dotted;
@@ -266,8 +261,7 @@ ul.pagination li a:hover:not(.active) {
 	height: 34px;
 	overflow: hidden;
 	background: url('../../mmk_media/image/more_unfold.png') no-repeat right #FCFCFC;
-	border:1px solid #96B97D;
-	border-radius:8px;
+	border:1px solid #6AAC15;
 	vertical-align:top;
 }
 #goodstype,.weight,.senddate,#startplace,#destination {

@@ -12,10 +12,9 @@ h1,label,button {
 button {
 	width:90px;
 	height:37px;
-	border-radius:10px;
 	border-style:solid;
-	border-width:2px;
-	background-color:#96B97D;
+	border-width:1px;
+	background-color:#6AAC15;
 	color:#FFFFFF;
 	text-decoration:none;
     cursor:pointer;
@@ -43,8 +42,7 @@ form button {
 	margin-top:20px;
 }
 textarea {
-	border-radius:8px;
-	border:1px solid #96B97D;
+	border:1px solid #6AAC15;
 	background-color:#FCFCFC;
 }
 .header {	/*头部*/
@@ -67,7 +65,7 @@ textarea {
 }
 .hr_style3 {
 	border-style:dotted;
-	border-color:#96B97D;
+	border-color:#6AAC15;
 }
 .article {	/*网页主体*/
 	background-color:#FCFCFC;
@@ -127,8 +125,9 @@ textarea {
 	margin-top:5px;
 }
 .topnav .menu:hover,.topnav a.active {
-	background-color:#96B97D;
+	background-color:#f4f4f4;
 	font-weight:bolder;
+	color:#000000;
 }
 .personalcenter,.message {
 	width:40px;
@@ -138,13 +137,12 @@ textarea {
 }
 .personalcenter {
 	border:2px solid #FFFFFF;
-	border-radius:50%;
 }
 .container1 {
 	background-color:#FFFFFF;
 }
 .container2 {
-	border-color:#96B97D;
+	border-color:#6AAC15;
 	background-color:#FFFFFF;
 	position:relative;
 	top:-200px;
@@ -177,17 +175,15 @@ textarea {
 	-webkit-appearance:none; /*for chrome*/
 }
 .weight {
-	border:1px solid #96B97D;
+	border:1px solid #6AAC15;
 	background-color:#FCFCFC;
-	border-radius:8px;
 }
 .styled-select {
 	display:inline-block;
 	height: 34px;
 	overflow: hidden;
 	background: url('../../mmk_media/image/more_unfold.png') no-repeat right #FCFCFC;
-	border:1px solid #96B97D;
-	border-radius:8px;
+	border:1px solid #6AAC15;
 	vertical-align:top;
 }
 .aboutus {
@@ -206,7 +202,7 @@ textarea {
 	-webkit-column-rule-style:dotted;
 }
 .linktype {
-	color:#96B97D;
+	color:#6AAC15;
 	font-weight:700;
 }
 .aboutus p{
