@@ -10,6 +10,7 @@ function checkPassword() {
     if ( null != password && password.length > 0 ) {
         return true;
     }
+
     alert("请输入修改后的密码");
     return false;
 }
