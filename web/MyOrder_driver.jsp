@@ -312,8 +312,8 @@
                                 --%>
 
                             </ul>
-                            <a herf="update_logistics.html?orderId=<%=transitOrderMap.get("id")%>">
-                                <button>更新物流</button>
+                            <a herf="UpdateLogistics.jsp?orderId=<%=transitOrderMap.get("id")%>">
+                                <button onclick="javascript:document.location.href='UpdateLogistics.jsp?orderId=<%=transitOrderMap.get("id")%>'">更新物流</button>
                             </a>
                         </div>
                         <%

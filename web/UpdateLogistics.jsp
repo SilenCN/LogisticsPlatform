@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: silen
+  Date: 18-1-11
+  Time: 下午11:48
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 
@@ -54,7 +62,7 @@
 
     <!-- BEGIN LOGIN FORM -->
 
-    <form class="form-vertical login-form" action="index.html">
+    <form class="form-vertical login-form" action="" onsubmit="return false;">
 
         <h3 class="form-title">更新物流</h3>
 
@@ -77,10 +85,10 @@
             </div>
 
         </div>
-        
+
         <div class="form-actions">
 
-            <button id="update_logistics_button" type="submit" class="btn green pull-right">
+            <button id="update_logistics_button" onclick="javascript:submitLogistics(<%=request.getParameter("orderId")%>)" type="submit" class="btn green pull-right">
 
                 确认更新 <i class="m-icon-swapright m-icon-white"></i>
 
@@ -130,6 +138,7 @@
 
 <script src="javascript/CookieUtils.js" type="text/javascript"></script>
 <script src="javascript/common_utils.js" type="text/javascript"></script>
+<script src="javascript/update_logistics.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
