@@ -40,4 +40,6 @@ public interface OrderDao {
 
     List<Map<String,Object>> selectOrderInfoByCarId(@Param("carId") int carId,@Param("status") int status);
     List<Map<String,Object>> selectOrderInfoByOwnerId(@Param("ownerId") int ownerId,@Param("status") int status);
+    List<Map<String,Object>> selectCarApplyOrderInfo(@Param("carId") int carId);
+    Map<String,Object> selectCarInfoForOrder(@Param("orderId") int orderId);
 }

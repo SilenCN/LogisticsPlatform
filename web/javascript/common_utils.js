@@ -18,9 +18,9 @@ function checkLoginStatus() {
 
 function redictMyOrder() {
     if (null!=getCookie("userType")&&getCookie("userType")=="1"){
-        document.location.href="myorders_.html";
+        document.location.href="MyOrder_driver.jsp";
     }else{
-        document.location.href="myorders.html";
+        document.location.href="MyOrder_shipper.jsp";
     }
 }
 function redictReleaseOrder() {
@@ -38,18 +38,7 @@ function redictPersonInfo() {
     }
 }
 
-/**
- *
- * 1
- 2
 
- date('Y-m-d','1350052653');//很方便的将时间戳转换成了2012-10-11
- date('Y-m-d H:i:s','1350052653');//得到的结果是2012-10-12 22:37:33
- * 和PHP一样的时间戳格式化函数
- * @param {string} format 格式
- * @param {int} timestamp 要格式化的时间 默认为当前时间
- * @return {string}   格式化的时间字符串
- */
 function date(format, timestamp){
     var a, jsdate=((timestamp) ? new Date(timestamp) : new Date());
     var pad = function(n, c){
@@ -153,7 +142,7 @@ function date(format, timestamp){
         U: function(){return Math.round(jsdate.getTime()/1000)}
     };
 
-    return format.replace(/[\]?([a-zA-Z])/g, function(t, s){
+    return format.replace("/[\]?([a-zA-Z])/g", function(t, s){
         if( t!=s ){
             // escaped
             ret = s;
@@ -169,7 +158,7 @@ function date(format, timestamp){
 }
 
 function dateToMills(date) {
-   // var stringTime = "2014-07-10 10:21:12";
+    // var stringTime = "2014-07-10 10:21:12";
     // noinspection JSAnnotator
     return Date.parse(new Date(date));
 }

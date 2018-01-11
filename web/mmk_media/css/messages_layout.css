@@ -12,10 +12,9 @@ h1,label,button {
 button {
 	width:90px;
 	height:37px;
-	border-radius:10px;
 	border-style:solid;
-	border-width:2px;
-	background-color:#96B97D;
+	border-width:1px;
+	background-color:#6AAC15;
 	color:#FFFFFF;
 	margin-top:10px;
 	text-decoration:none;
@@ -44,8 +43,7 @@ form button {
 	margin-top:20px;
 }
 textarea {
-	border-radius:8px;
-	border:1px solid #96B97D;
+	border:1px solid #6AAC15;
 	background-color:#FFFFFF;
 	font-size:20px;
 	text-align:center;
@@ -70,7 +68,7 @@ textarea {
 }
 .hr_style3 {
 	border-style:dotted;
-	border-color:#96B97D;
+	border-color:#6AAC15;
 }
 .article {	/*网页主体*/
 	background-color:#FCFCFC;
@@ -130,7 +128,7 @@ textarea {
 	margin-top:5px;
 }
 .topnav .menu:hover,.topnav a.active {
-	background-color:#96B97D;
+	background-color:#6AAC15;
 	font-weight:bolder;
 }
 .personalcenter,.message {
@@ -147,7 +145,7 @@ textarea {
 	background-color:#FFFFFF;
 }
 .container2 {
-	border-color:#96B97D;
+	border-color:#6AAC15;
 	background-color:#FFFFFF;
 	position:relative;
 	top:-200px;
@@ -171,7 +169,7 @@ textarea {
 .amessage {
 	width:600px;
 	background-color:#FCFCFC;
-	border:1px solid #96B97D;
+	border:1px solid #6AAC15;
 	border-left-width:15px;
 	padding:20px;
 }

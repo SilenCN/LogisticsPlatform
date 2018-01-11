@@ -1,6 +1,7 @@
 package com.service.impl;
 
 import com.dao.InfoDao;
+import com.dao.UserDao;
 import com.model.CarInfo;
 import com.model.OwnerInfo;
 import com.service.InfoService;
@@ -14,15 +15,19 @@ public class InfoServiceImpl implements InfoService {
     @Resource
     private InfoDao infoDao;
 
+    @Resource
+    private UserDao userDao;
     @Override
     public boolean insertCarInfo(CarInfo carInfo) {
         int result = infoDao.insertCarInfo(carInfo);
+        userDao.updateInfoStatus(carInfo.getId());
         return result > 0;
     }
 
     @Override
     public boolean insertOwnerInfo(OwnerInfo ownerInfo) {
         int result = infoDao.insertOwnerInfo(ownerInfo);
+        userDao.updateInfoStatus(ownerInfo.getId());
         return result > 0;
     }
 

@@ -13,5 +13,5 @@ public interface LogisticsDao {
      * @param orderId
      * @return
      */
-    List<Map<String, Object>> getLogistics(int orderId);
+    List<Logistics> getLogistics(int orderId);
 }

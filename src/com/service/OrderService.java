@@ -21,4 +21,5 @@ public interface OrderService {
 
     List<Map<String,Object>> getOrderInfoByCarId(int carId,int status);
     List<Map<String,Object>> getOrderInfoByOwnerId(int ownerId,int status);
+    Map<String,Object> getCarInfoForOrder(int orderId);
 }

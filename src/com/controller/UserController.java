@@ -79,11 +79,11 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/checkImprovedInfo")
-    public boolean checkImprovedInfo(HttpServletRequest request, HttpServletResponse response) {
+    public String checkImprovedInfo(HttpServletRequest request, HttpServletResponse response) {
         String id = CookieUtils.getCookieValueByName(request, "userId");
         if (null != id) {
-            return userService.checkInfo(Integer.parseInt(id.trim()));
+            return userService.checkInfo(Integer.parseInt(id.trim()))+"";
         }
-        return false;
+        return "false";
     }
 }

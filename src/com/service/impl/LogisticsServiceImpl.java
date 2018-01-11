@@ -23,7 +23,7 @@ public class LogisticsServiceImpl implements LogisticsService{
     }
 
     @Override
-    public List<Map<String, Object>> getLogistics(int orderId) {
+    public List<Logistics> getLogistics(int orderId) {
         return logisticsDao.getLogistics(orderId);
     }
 }

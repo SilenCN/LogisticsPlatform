@@ -21,4 +21,5 @@ public interface UserService {
 
     boolean checkInfo(int id);
 
+
 }

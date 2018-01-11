@@ -21,6 +21,9 @@ public class ApplyServiceImpl implements ApplyService {
     @Override
     public boolean insertApply(Apply apply) {
         apply.setCreateTime(System.currentTimeMillis());
+        if (applyDao.queryApply(apply.getOrderId(), apply.getCarId()) != null) {
+            return false;
+        }
         if (!(applyDao.insertApply(apply) > 0)) {
             return false;
         }
@@ -29,7 +32,7 @@ public class ApplyServiceImpl implements ApplyService {
 
     @Override
     public boolean updateApplyStatus(int id) {
-        if (!(applyDao.updateApplyStatusById(id) > 0)){
+        if (!(applyDao.updateApplyStatusById(id) > 0)) {
             return false;
         }
         return orderService.updateOrder(applyDao.IdtoorderId(id), Order.STATUS_IN_TRANSIT);

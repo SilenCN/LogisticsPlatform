@@ -7,7 +7,7 @@
         insert into logistics(orderId,info,createTime)values(#{orderId},#{info},#{createTime})
     </insert>
 
-    <select id="getLogistics"  resultType="java.util.HashMap">
+    <select id="getLogistics"  resultType="com.model.Logistics">
         select * from logistics where orderId=#{orderId}
     </select>
 </mapper>
