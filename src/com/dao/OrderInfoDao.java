@@ -25,5 +25,5 @@ public interface OrderInfoDao {
 
     List<Map<String , Object>> selectOrderInfoByType (@Param("type") int type,@Param("start") int start);
 
-    List<Map<String , Object>> selectOrderInfoByDeparture (@Param("") String departure, @Param("start") int start);
+    List<Map<String , Object>> selectOrderInfoByDeparture (@Param("departure") String departure, @Param("start") int start);
 }

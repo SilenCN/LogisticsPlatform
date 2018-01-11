@@ -36,7 +36,7 @@ create table orderInfo(
     id INTEGER primary key,
     type INTEGER,
     goods TEXT,
-    price FLOAT,
+    deliveryTime BIGINT,
     weight FLOAT,
     departure TEXT,
     target TEXT,
@@ -58,3 +58,4 @@ create table logistics(
     );
 
 
+alter table logistics CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;

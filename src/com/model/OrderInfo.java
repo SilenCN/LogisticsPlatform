@@ -16,13 +16,14 @@ public class OrderInfo extends Order {
      */
     public static final String TARGET_ALL="ALL";
 
-    private int type=TYPE_OF_ALL;
+    private int type;
     private String goods;
     private Float weight;
     private long deliveryTime;
-    private String departure=DEPARTURE_ALL;
-    private String target=TARGET_ALL;
+    private String departure;
+    private String target;
     private String remark;
+
 
     public int getType() {
         return type;
@@ -77,4 +78,6 @@ public class OrderInfo extends Order {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+
 }
