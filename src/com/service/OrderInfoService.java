@@ -9,7 +9,7 @@ public interface OrderInfoService {
     /**
      * 发布一条订单
      */
-    boolean insertOrderInfo(OrderInfo orderInfo);
+    boolean insertOrderInfo(OrderInfo orderInfo,int ownerId);
 
     /**
      * 删除一条订单

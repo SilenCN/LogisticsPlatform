@@ -2,11 +2,13 @@ package com.controller;
 
 import com.model.OrderInfo;
 import com.service.OrderInfoService;
+import com.utils.CookieUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -18,8 +20,9 @@ public class OrderInfoController {
 
     @RequestMapping("/insertOrderInfo")
     @ResponseBody
-    public String insertOrderInfo(OrderInfo orderInfo){
-        return orderInfoService.insertOrderInfo(orderInfo)+"";
+    public String insertOrderInfo(OrderInfo orderInfo, HttpServletRequest httpServletRequest){
+        String ownerId= CookieUtils.getCookieValueByName(httpServletRequest,"userId");
+        return orderInfoService.insertOrderInfo(orderInfo,Integer.parseInt(ownerId))+"";
     }
 
     @ResponseBody
