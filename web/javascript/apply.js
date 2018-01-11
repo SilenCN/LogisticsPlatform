@@ -35,7 +35,7 @@ function apply(orderId){
             success: function(data){
                 if(data.toString() == "true"){
                     alert("您已成功申请一个订单，等待货主确认");
-                    window.location.href = "home.html";
+                    window.location.href = "MyOrder_driver.jsp";
                 }
                 else alert("申请订单失败");
             }

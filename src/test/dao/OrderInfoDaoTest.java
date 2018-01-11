@@ -1,6 +1,7 @@
 package test.dao;
 
 import com.dao.OrderInfoDao;
+import com.model.Order;
 import com.model.OrderInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -23,13 +24,14 @@ public class OrderInfoDaoTest {
         orderInfoDao = (OrderInfoDao) (new ClassPathXmlApplicationContext("classpath:config/spring-mybatis.xml")).getBean("orderInfoDao");
 
         OrderInfo orderInfo = new OrderInfo();
-        orderInfo.setId(3);
+        orderInfo.setId(6);
         orderInfo.setDeliveryTime(System.currentTimeMillis() + 1000000000);
-        orderInfo.setDeparture("1215");
+        orderInfo.setDeparture("河北省|河北垃圾大学");
         orderInfo.setGoods("测试");
-        orderInfo.setTarget("重庆市");
-        orderInfo.setType(1);
+        orderInfo.setTarget("重庆市|重庆市xxx");
+        orderInfo.setType(Order.STATUS_NO_APPLY);
         orderInfo.setWeight(5f);
+        orderInfo.setRemark("这是一条备注");
         orderInfoDao.insertOrderInfo(orderInfo);
     }
 
@@ -51,7 +53,7 @@ public class OrderInfoDaoTest {
     @Test
     public void selectOrderInfo() {
         orderInfoDao = (OrderInfoDao) (new ClassPathXmlApplicationContext("classpath:config/spring-mybatis.xml")).getBean("orderInfoDao");
-        System.out.println(orderInfoDao.selectOrderInfo(1, 1215 + "", "重庆市", 0));
+        System.out.println(orderInfoDao.selectOrderInfo(0, 1215 + "", "重庆市", 0));
     }
 
     @Test

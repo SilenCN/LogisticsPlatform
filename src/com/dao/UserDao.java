@@ -10,4 +10,5 @@ public interface UserDao {
     int create(User user);
     User getUserByName(String name);
     User getUserById(int id);
+    int updateInfoStatus(int id);
 }

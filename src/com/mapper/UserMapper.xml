@@ -13,4 +13,7 @@
     <select id="getUserById" resultType="com.model.User">
         SELECT * FROM user WHERE id=#{id}
     </select>
+    <update id="updateInfoStatus">
+        update user set info=true where id=#{id}
+    </update>
 </mapper>

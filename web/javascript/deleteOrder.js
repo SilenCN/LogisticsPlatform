@@ -8,7 +8,7 @@ function delOrder(id) {
             if(data.toString() == "true") {//删除订单成功
                 //删除成功提示框
                 confirm("提示：您已成功删除一个订单!");
-                window.location.href = "myorders.html";
+                window.location.href = "MyOrder_shipper.jsp";
             }
         }
     });

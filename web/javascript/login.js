@@ -31,8 +31,8 @@ function checkInfoStatus() {
         data: 't=' +Math.random(),
         async: false,
         success: function (data) {
-            if (data==true){
-                window.location.href = "home.html";
+            if (data=="true"){
+                window.location.href = "home.jsp";
             }else{
                 if (getCookie("userType")=="1"){
                     window.location.href="driver_details.html";

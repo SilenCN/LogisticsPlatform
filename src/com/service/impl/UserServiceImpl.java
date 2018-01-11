@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
         if (id>=0){
             User user=userDao.getUserById(id);
             if (null!=user||null!=user.getName()){
-                return true;
+                return user.isInfo();
             }
         }
         return false;

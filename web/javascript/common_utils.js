@@ -18,9 +18,9 @@ function checkLoginStatus() {
 
 function redictMyOrder() {
     if (null!=getCookie("userType")&&getCookie("userType")=="1"){
-        document.location.href="myorders_.html";
+        document.location.href="MyOrder_driver.jsp";
     }else{
-        document.location.href="myorders.html";
+        document.location.href="MyOrder_shipper.jsp";
     }
 }
 function redictReleaseOrder() {

@@ -52,7 +52,7 @@
         <hr class="hr_style1"/>
 
         <div class="topnav">
-            <a class="menu" href="home.html">主页</a>
+            <a class="menu" href="home.jsp">主页</a>
             <a class="menu active" href="javascript:redictMyOrder()">我的订单</a>
             <a class="menu" href="javascript:redictReleaseOrder()">发布订单</a>
             <a class="menu" href="#aboutus">关于我们</a>
@@ -117,9 +117,9 @@
                                 </td>
                                 <td class="title3"><%=waitCheckMap.get("weight")%>
                                 </td>
-                                <td class="title4"><%=((String) waitCheckMap.get("departure")).split("|")[0]%>
+                                <td class="title4"><%=((String) waitCheckMap.get("departure")).split("\\|")[0]%>
                                 </td>
-                                <td class="title5"><%=((String) waitCheckMap.get("target")).split("|")[0]%>
+                                <td class="title5"><%=((String) waitCheckMap.get("target")).split("\\|")[0]%>
                                 </td>
                                 <td class="title6"><%=new SimpleDateFormat("yyyy-MM-dd").format(new Date((long) waitCheckMap.get("createTime")))%>
                                 </td>
@@ -129,12 +129,12 @@
                             <table class="details">
                                 <tr>
                                     <td>发货详细地址</td>
-                                    <td><%=((String) waitCheckMap.get("departure")).split("|")[1]%>
+                                    <td><%=((String) waitCheckMap.get("departure")).split("\\|")[1]%>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>收货详细地址</td>
-                                    <td><%=((String) waitCheckMap.get("target")).split("|")[1]%>
+                                    <td><%=((String) waitCheckMap.get("target")).split("\\|")[1]%>
                                     </td>
                                 </tr>
                                 <tr>
@@ -227,9 +227,9 @@
                                 </td>
                                 <td class="title3"><%=transitOrderMap.get("weight")%>
                                 </td>
-                                <td class="title4"><%=((String) transitOrderMap.get("departure")).split("|")[0]%>
+                                <td class="title4"><%=((String) transitOrderMap.get("departure")).split("\\|")[0]%>
                                 </td>
-                                <td class="title5"><%=((String) transitOrderMap.get("target")).split("|")[0]%>
+                                <td class="title5"><%=((String) transitOrderMap.get("target")).split("\\|")[0]%>
                                 </td>
                                 <td class="title6"><%=new SimpleDateFormat("yyyy-MM-dd").format(new Date((long) transitOrderMap.get("createTime")))%>
                                 </td>
@@ -239,12 +239,12 @@
                             <table class="details">
                                 <tr>
                                     <td>发货详细地址</td>
-                                    <td><%=((String) transitOrderMap.get("departure")).split("|")[1]%>
+                                    <td><%=((String) transitOrderMap.get("departure")).split("\\|")[1]%>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>收货详细地址</td>
-                                    <td><%=((String) transitOrderMap.get("target")).split("|")[1]%>
+                                    <td><%=((String) transitOrderMap.get("target")).split("\\|")[1]%>
                                     </td>
                                 </tr>
                                 <tr>
@@ -357,7 +357,7 @@
 
                     <div align="center">
                         <%
-                            List<Map<String, Object>> finishOrderList = orderService.getOrderInfoByOwnerId(carId, Order.STATUS_FINALLY);
+                            List<Map<String, Object>> finishOrderList = orderService.getOrderInfoByCarId(carId, Order.STATUS_FINALLY);
                             for (Map<String, Object> finishMap : finishOrderList) {
 
                         %>
@@ -369,9 +369,9 @@
                                 </td>
                                 <td class="title3"><%=finishMap.get("weight")%>
                                 </td>
-                                <td class="title4"><%=((String) finishMap.get("departure")).split("|")[0]%>
+                                <td class="title4"><%=((String) finishMap.get("departure")).split("\\|")[0]%>
                                 </td>
-                                <td class="title5"><%=((String) finishMap.get("target")).split("|")[0]%>
+                                <td class="title5"><%=((String) finishMap.get("target")).split("\\|")[0]%>
                                 </td>
                                 <td class="title6"><%=new SimpleDateFormat("yyyy-MM-dd").format(new Date((long) finishMap.get("createTime")))%>
                                 </td>
@@ -381,12 +381,12 @@
                             <table class="details">
                                 <tr>
                                     <td>发货详细地址</td>
-                                    <td><%=((String) finishMap.get("departure")).split("|")[1]%>
+                                    <td><%=((String) finishMap.get("departure")).split("\\|")[1]%>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>收货详细地址</td>
-                                    <td><%=((String) finishMap.get("target")).split("|")[1]%>
+                                    <td><%=((String) finishMap.get("target")).split("\\|")[1]%>
                                     </td>
                                 </tr>
                                 <tr>

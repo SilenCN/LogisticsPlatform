@@ -1,6 +1,8 @@
 var type;
 var departure;
+var detailDeparture;
 var target;
+var detailTarget;
 var goods;
 var deliveryTime;
 var remark;
@@ -62,12 +64,14 @@ function submit() {
 
     //获取用户输入的货物信息
     type = $.trim($('#goodstype').val());  //货物类型
-    goods = $.trim($('#name').val());  //货物名称
+    goods = $.trim($('#release_name').val());  //货物名称
     departure = $.trim($('#startplace').val());  //出发地
+    detailDeparture=$.trim($('#release_details_departure').val())
     target = $.trim($('#destination').val());   //目的地
-    deliveryTime = $.trim($('#deliveryTime').val());  //发货时间
-    weight = $.trim($('#weight').val());    //货物重量
-    remark = "";
+    detailTarget=$.trim($('#release_target_details').val());
+    deliveryTime = $.trim($('#release_delivery').val());  //发货时间
+    weight = $.trim($('#release_weight').val());    //货物重量
+    remark = $.trim($('#release_remark').val());;
 
     /* var orderinfo=new Object();
      orderinfo.type=type;
@@ -97,7 +101,7 @@ function release(){
     $.ajax({
         type: 'POST',
         url: '/OrderInfo/insertOrderInfo',
-        data: 'type=' +type +'&goods='+goods +'&departure='+departure +'&target='+target +'&deliveryTime='+deliveryTime+'&weight='+weight+'&remark='+remark,
+        data: 'type=' +type +'&goods='+goods +'&departure='+departure+"|"+detailDeparture +'&target='+target+"|"+detailTarget +'&deliveryTime='+dateToMills(deliveryTime)+'&weight='+weight+'&remark='+remark,
         async: false,
         success: function(data){
             console.log(data);
@@ -105,7 +109,7 @@ function release(){
             if(data.toString()=="true") {//插入成功
                 //申请成功提示框，返回
                 confirm("提示：您已成功申请一个订单!");
-                window.location.href = "home.html";
+                window.location.href = "MyOrder_shipper.jsp";
             }
         }
     });

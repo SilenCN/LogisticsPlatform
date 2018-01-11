@@ -5,7 +5,8 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="com.utils.CookieUtils" %><%--
+<%@ page import="com.utils.CookieUtils" %>
+<%@ page import="com.model.OrderInfo" %><%--
   Created by IntelliJ IDEA.
   User: silen
   Date: 18-1-11
@@ -28,8 +29,16 @@
     OrderInfoService orderInfoService = (OrderInfoService) context.getBean("orderInfoService");
 
     String typeString = request.getParameter("goodstype");
+
     String departure = request.getParameter("startplace");
+    if (null == departure || departure.equals("")) {
+        departure = OrderInfo.DEPARTURE_ALL;
+    }
     String target = request.getParameter("destination");
+    if (null == target || target.equals("")) {
+        target = OrderInfo.TARGET_ALL;
+    }
+
     String pageString = request.getParameter("page");
     int pageInt = 1;
     if (pageString == null) {
@@ -61,7 +70,7 @@
         <hr class="hr_style1"/>
 
         <div class="topnav">
-            <a class="menu active" href="home.html">主页</a>
+            <a class="menu active" href="home.jsp">主页</a>
             <a class="menu" href="javascript:redictMyOrder()">我的订单</a>
             <a class="menu" href="javascript:redictReleaseOrder()">发布订单</a>
             <a class="menu" href="#aboutus">关于我们</a>
@@ -210,9 +219,9 @@
                             </td>
                             <td class="title3"><%=orderInfo.get("weight")%>
                             </td>
-                            <td class="title4"><%=((String) orderInfo.get("departure")).split("|")[0]%>
+                            <td class="title4"><%=((String) orderInfo.get("departure")).split("\\|")[0]%>
                             </td>
-                            <td class="title5"><%=((String) orderInfo.get("target")).split("|")[0]%>
+                            <td class="title5"><%=((String) orderInfo.get("target")).split("\\|")[0]%>
                             </td>
                             <td class="title6"><%=new SimpleDateFormat("yyyy-MM-dd").format(new Date((long) orderInfo.get("createTime")))%>
                             </td>
@@ -222,12 +231,12 @@
                         <table class="details">
                             <tr>
                                 <td>发货详细地址</td>
-                                <td><%=((String) orderInfo.get("departure")).split("|")[1]%>
+                                <td><%=((String) orderInfo.get("departure")).split("\\|")[1]%>
                                 </td>
                             </tr>
                             <tr>
                                 <td>收货详细地址</td>
-                                <td><%=((String) orderInfo.get("target")).split("|")[1]%>
+                                <td><%=((String) orderInfo.get("target")).split("\\|")[1]%>
                                 </td>
                             </tr>
                             <tr>
@@ -243,7 +252,7 @@
                         <%
                             if (isDriver) {
                         %>
-                        <button class="apply" type="submit" onclick="hintInfo(<%=orderInfo.get("id")%>)">申请订单</button>
+                        <button class="apply" type="submit" onclick="javascript:apply(<%=orderInfo.get("id")%>)">申请订单</button>
                         <%
                             }
                         %>
@@ -252,101 +261,101 @@
                         }
                     %>
 
-                 <%--   <table class="result accordion">
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <div class="panel">
-                        <table class="details">
-                            <tr>
-                                <td>发货详细地址</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>收货详细地址</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>货主联系方式</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>备注</td>
-                                <td>***</td>
-                            </tr>
-                        </table>
-                        <button class="apply" type="submit" onclick="hintInfo()">申请订单</button>
-                    </div>
+                    <%--   <table class="result accordion">
+                           <tr>
+                               <td class="title1">宇神</td>
+                               <td class="title2">极品牌宇神</td>
+                               <td class="title3">1000</td>
+                               <td class="title4">河北省</td>
+                               <td class="title5">安徽省</td>
+                               <td class="title6">2018-1-15</td>
+                           </tr>
+                       </table>
+                       <div class="panel">
+                           <table class="details">
+                               <tr>
+                                   <td>发货详细地址</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>收货详细地址</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>货主联系方式</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>备注</td>
+                                   <td>***</td>
+                               </tr>
+                           </table>
+                           <button class="apply" type="submit" onclick="hintInfo()">申请订单</button>
+                       </div>
 
-                    <table class="result accordion">
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <div class="panel">
-                        <table class="details">
-                            <tr>
-                                <td>发货详细地址</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>收货详细地址</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>货主联系方式</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>备注</td>
-                                <td>***</td>
-                            </tr>
-                        </table>
-                        <button class="apply" type="submit" onclick="hintInfo()">申请订单</button>
-                    </div>
+                       <table class="result accordion">
+                           <tr>
+                               <td class="title1">宇神</td>
+                               <td class="title2">极品牌宇神</td>
+                               <td class="title3">1000</td>
+                               <td class="title4">河北省</td>
+                               <td class="title5">安徽省</td>
+                               <td class="title6">2018-1-15</td>
+                           </tr>
+                       </table>
+                       <div class="panel">
+                           <table class="details">
+                               <tr>
+                                   <td>发货详细地址</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>收货详细地址</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>货主联系方式</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>备注</td>
+                                   <td>***</td>
+                               </tr>
+                           </table>
+                           <button class="apply" type="submit" onclick="hintInfo()">申请订单</button>
+                       </div>
 
-                    <table class="result accordion">
-                        <tr>
-                            <td class="title1">宇神</td>
-                            <td class="title2">极品牌宇神</td>
-                            <td class="title3">1000</td>
-                            <td class="title4">河北省</td>
-                            <td class="title5">安徽省</td>
-                            <td class="title6">2018-1-15</td>
-                        </tr>
-                    </table>
-                    <div class="panel">
-                        <table class="details">
-                            <tr>
-                                <td>发货详细地址</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>收货详细地址</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>货主联系方式</td>
-                                <td>***</td>
-                            </tr>
-                            <tr>
-                                <td>备注</td>
-                                <td>***</td>
-                            </tr>
-                        </table>
-                        <button class="apply" type="submit" onclick="hintInfo()">申请订单</button>
-                    </div>--%>
+                       <table class="result accordion">
+                           <tr>
+                               <td class="title1">宇神</td>
+                               <td class="title2">极品牌宇神</td>
+                               <td class="title3">1000</td>
+                               <td class="title4">河北省</td>
+                               <td class="title5">安徽省</td>
+                               <td class="title6">2018-1-15</td>
+                           </tr>
+                       </table>
+                       <div class="panel">
+                           <table class="details">
+                               <tr>
+                                   <td>发货详细地址</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>收货详细地址</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>货主联系方式</td>
+                                   <td>***</td>
+                               </tr>
+                               <tr>
+                                   <td>备注</td>
+                                   <td>***</td>
+                               </tr>
+                           </table>
+                           <button class="apply" type="submit" onclick="hintInfo()">申请订单</button>
+                       </div>--%>
 
                     <script>
                         var acc = document.getElementsByClassName("accordion");
@@ -368,15 +377,22 @@
                 </div>    <!--结果表结束-->
 
                 <ul class="pagination">
-                    <li><a href="">«</a></li>
-                    <li><a class="active" href="">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                    <li><a href="">6</a></li>
-                    <li><a href="">7</a></li>
-                    <li><a href="">»</a></li>
+
+                    <%
+                        if (pageInt != 1) {
+                    %>
+                    <li><a href="home.jsp?goodstype=<%=type%>&startplace=<%=departure%>&target=<%=target%>&page=<%=(pageInt-1)%>">«上一页</a></li>
+                    <%
+                        }
+                    %>
+                    <%--                   <li><a class="active" href="">1</a></li>
+                                       <li><a href="">2</a></li>
+                                       <li><a href="">3</a></li>
+                                       <li><a href="">4</a></li>
+                                       <li><a href="">5</a></li>
+                                       <li><a href="">6</a></li>
+                                       <li><a href="">7</a></li>--%>
+                    <li><a href="home.jsp?goodstype=<%=type%>&startplace=<%=departure%>&target=<%=target%>&page=<%=(pageInt+1)%>">下一页»</a></li>
                 </ul>
 
             </div>    <!--表和翻页结束-->
@@ -434,6 +450,7 @@
 <script src="javascript/CookieUtils.js" type="text/javascript"></script>
 <script src="javascript/common_utils.js" type="text/javascript"></script>
 
+<script src="javascript/apply.js" type="text/javascript"></script>
 </body>
 </html>
 
