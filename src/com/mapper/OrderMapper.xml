@@ -29,11 +29,11 @@
     </select>
 
     <select id="selectOrderInfoByCarId" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orders,orderInfo,apply WHERE orders.id=orderInfo.id AND orders.id=apply.orderId AND apply.status=true AND orders.status=#{status} AND apply.carId=#{carId}
+        SELECT orderInfo.*,orders.createTime FROM orders,orderInfo,apply WHERE orders.id=orderInfo.id AND orders.id=apply.orderId AND apply.status=true AND orders.status=#{status} AND apply.carId=#{carId}
     </select>
 
     <select id="selectOrderInfoByOwnerId" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orders,orderInfo WHERE orders.id=orderInfo.id AND orders.ownerId=#{ownerId} AND orders.status=#{status}
+        SELECT orderInfo.* , orders.createTime FROM orders,orderInfo WHERE orders.id=orderInfo.id AND orders.ownerId=#{ownerId} AND orders.status=#{status}
     </select>
 
 </mapper>

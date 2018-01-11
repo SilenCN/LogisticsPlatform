@@ -23,7 +23,7 @@ public class LogisticsController {
 
     @RequestMapping("/getLogistics")
     @ResponseBody
-    public List<Map<String , Object>> getApplyInfo(int orderId){
+    public List<Logistics> getApplyInfo(int orderId){
         return logisticsService.getLogistics(orderId);
     }
 }
