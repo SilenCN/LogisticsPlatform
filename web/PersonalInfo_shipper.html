@@ -85,8 +85,6 @@
 
         <h3 class="form-title">修改您的账户信息和个人信息</h3>
 
-        <h4>用户名：</h4>
-
         <div class="control-group">
 
             <label class="control-label visible-ie8 visible-ie9">Password</label>
@@ -115,7 +113,7 @@
 
                     <i class="icon-user"></i>
 
-                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的联系电话" name="phone"/>
+                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="请输入您的联系电话" id="register_phone" name="phone"/>
 
                 </div>
 
@@ -127,10 +125,14 @@
             <label class="control-label"></label>
             <div class="controls">
                 <select name="goods" id="goods_list" class="span6" style="width: 290px">
-                    <option value="">请选择常用货物类型</option>
-                    <option value="1">生鲜</option>
-                    <option value="2">化学物品</option>
-                    <option value="3">易燃易爆物品</option>
+                    <option value="1" selected>机械设备</option>
+                    <option value="2">家具</option>
+                    <option value="3">食品</option>
+                    <option value="4">生鲜</option>
+                    <option value="5">家禽</option>
+                    <option value="6">电子产品</option>
+                    <option value="7">衣服饰品</option>
+                    <option value="8">其他</option>
                 </select>
             </div>
         </div>
@@ -152,7 +154,7 @@
 
                         <i class="icon-user"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="省" name="province"/>
+                        <input class="m-wrap placeholder-no-fix" type="text" id="province" placeholder="省" name="province"/>
 
                     </div>
 
@@ -178,7 +180,7 @@
 
                         <i class="icon-user"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="市" name="city"/>
+                        <input class="m-wrap placeholder-no-fix" type="text" id="city" placeholder="市" name="city"/>
 
                     </div>
 
@@ -204,7 +206,7 @@
 
                         <i class="icon-user"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="城区" name="block"/>
+                        <input class="m-wrap placeholder-no-fix" type="text" id="block" placeholder="城区" name="block"/>
 
                     </div>
 
@@ -218,7 +220,7 @@
 
             <div class="controls">
 
-                <textarea style="width: 277px" rows="3" placeholder="详细地址" name="remarks"></textarea>
+                <textarea style="width: 277px" rows="3" placeholder="详细地址" id="address_details" name="remarks"></textarea>
 
             </div>
 
@@ -226,7 +228,7 @@
 
         <div class="form-actions">
 
-            <button type="submit" class="btn green pull-right" >
+            <button type="submit" class="btn green pull-right" id="saveInfo" >
 
                 确认修改 <i class="m-icon-swapright m-icon-white"></i>
 
