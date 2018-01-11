@@ -5,18 +5,18 @@
 <mapper namespace="com.dao.OrderInfoDao">
 
     <insert id="insertOrderInfo" useGeneratedKeys="true" keyProperty="id" parameterType="com.model.OrderInfo">
-        INSERT INTO orderInfo(id,type,goods,weight,departure,target,remark) VALUES(#{id},#{type},#{goods},#{weight},#{departure},#{target},#{remark})
+        INSERT INTO orderInfo(id,type,goods,weight,deliveryTime,departure,target,remark) VALUES(#{id},#{type},#{goods},#{weight},#{deliveryTime},#{departure},#{target},#{remark})
     </insert>
 
     <delete id="deleteOrderInfo" parameterType="com.model.OrderInfo">
         DELETE FROM orderInfo WHERE id=#{id}
     </delete>
     <select id="getOrderInfo" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND orderInfo.deliveryTime>unix_timestamp(now())*1000 ORDER  BY orders.createtime DESC  #{start},7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND orderInfo.deliveryTime>unix_timestamp(now())*1000 ORDER  BY orders.createtime DESC limit #{start},7
     </select>
 
     <select id="selectOrderInfo" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND type=#{type} AND departure like CONCAT('%','#{departure}','%' ) AND target like CONCAT('%','#{target}','%' ) ORDER  BY orders.createtime DESC LIMIT #{start},7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND type=#{type} AND departure like CONCAT('%','${departure}','%' ) AND target like CONCAT('%','${target}','%' ) ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoExpType" resultType="java.util.HashMap">
@@ -24,23 +24,23 @@
     </select>
 
     <select id="selectOrderInfoExpDeparture" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND target like CONCAT('%','#{target}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND target like CONCAT('%','${target}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoExpTarget" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND departure like CONCAT('%','#{departure}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND departure like CONCAT('%','${departure}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoByTarget" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND AND orderInfo.deliveryTime>unix_timestamp(now())*1000 target like CONCAT('%','#{target}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND target like CONCAT('%','${target}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoByType" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND orderInfo.deliveryTime>unix_timestamp(now())*1000 ORDER  BY orders.createtime DESC LIMIT #{start}+1,7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND type=#{type} AND orderInfo.deliveryTime>unix_timestamp(now())*1000 ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
     <select id="selectOrderInfoByDeparture" resultType="java.util.HashMap">
-        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND departure like CONCAT('%','#{departure}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
+        SELECT orderInfo.* FROM orderInfo,orders WHERE orderInfo.id=orders.id AND orderInfo.deliveryTime>unix_timestamp(now())*1000 AND departure like CONCAT('%','${departure}','%') ORDER  BY orders.createtime DESC LIMIT #{start},7
     </select>
 
 </mapper>

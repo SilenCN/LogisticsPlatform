@@ -11,7 +11,7 @@ public interface ApplyDao {
     Apply queryById(int id);
     Apply queryApply(@Param("orderId") int orderId, @Param("carId") int carId);
     List<Map<String,Object>> selectApplyCarInfoList(int orderId);
-    Map<String,Object> selectAppliInfo(int id);
+    Map<String,Object> selectApplyInfo(int id);
     int updateApplyStatusById(int id);
     int updateApplyStatus(@Param("orderId") int orderId,@Param("carId") int carId);
     Apply applyGetOrderID(int id);

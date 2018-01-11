@@ -56,6 +56,6 @@ public class ApplyServiceImpl implements ApplyService {
 
     @Override
     public Map<String,Object> getApplyInfo(int id){
-        return applyDao.selectAppliInfo(id);
+        return applyDao.selectApplyInfo(id);
     }
 }

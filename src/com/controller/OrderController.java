@@ -23,7 +23,7 @@ public class OrderController {
 
     @ResponseBody
     @RequestMapping("/updateOrderById")
-    public String updataOrderById( int id ){ return orderService.updateOrderById( id )+""; }
+    public String updateOrderById( int id ){ return orderService.updateOrderById( id )+""; }
 
     @ResponseBody
     @RequestMapping("/deleteOrder")

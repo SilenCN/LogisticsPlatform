@@ -36,6 +36,7 @@ create table orderInfo(
     id INTEGER primary key,
     type INTEGER,
     goods TEXT,
+    deliveryTime BIGINT,
     weight FLOAT,
     departure TEXT,
     target TEXT,

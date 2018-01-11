@@ -9,22 +9,22 @@
     </insert>
 
     <update id="updateOrder" keyProperty="id" parameterType="com.model.Order">
-        UPDATE orders SET satatus=#{status} WHERE id=#{id}
+        UPDATE orders SET status=#{status} WHERE id=#{id}
     </update>
 
     <update id="updateOrderById" keyProperty="id" parameterType="com.model.Order">
         UPDATE orders SET status=4 WHERE id=#{id}
     </update>
 
-    <delete id="deleteOrderInfo" parameterType="com.model.Order">
+    <delete id="deleteOrder" parameterType="com.model.Order">
         DELETE FROM orders WHERE id=#{id}
     </delete>
 
-    <select id="getOrder" resultType="com.model.Order">
+    <select id="getOrder" resultType="java.util.HashMap">
         SELECT orderInfo.type,orderInfo.goods,orderInfo.weight,orderInfo.deliveryTime,orderInfo.departure,orderInfo.target,orderInfo.remark FROM orderInfo,orders WHERE orders.id=orderInfo.id AND orders.status=#{status} LIMIT #{start},7
     </select>
 
-    <select id="selectOrder" resultType="com.model.Order">
+    <select id="selectOrder" resultType="java.util.HashMap">
         SELECT orderInfo.* FROM orders,orderInfo WHERE orders.id=orderInfo.id LIMIT #{start},7
     </select>
 
